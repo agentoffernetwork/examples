@@ -15,7 +15,7 @@ This repository owns practical request/response payloads, SDK code snippets, and
 ## Pull Request Expectations
 
 - All examples must validate against the current [JSON Schema](https://github.com/agentoffernetwork/schema)
-- Confirm which protocol version the example targets (e.g., v0.1)
+- Confirm the example targets Protocol v0.2, unless it is explicitly marked as historical material
 - Use realistic but fictional data -- do not include real company names, URLs, or tracking IDs
 - Follow existing JSON formatting conventions (2-space indent, consistent key ordering)
 
@@ -28,21 +28,16 @@ This repository owns practical request/response payloads, SDK code snippets, and
 ## Validating Examples
 
 ```bash
-# Validate with temporary tooling (no local install required)
-npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
-  ajv validate \
-  --spec=draft2020 \
-  -s ../schema/json-schema/offer-schema-v0.1.json \
-  -d http/notion-offer.json
-
-# Validate a single offer
-ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d http/notion-offer.json --spec=draft2020
-
-# Validate all offers
-for f in http/*-offer.json; do
-  ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d "$f" --spec=draft2020
-done
+npm ci --ignore-scripts
+npm run test:contract-ci
 ```
+
+Validate shared types and schema vectors in the standalone
+[agentoffernetwork/schema](https://github.com/agentoffernetwork/schema)
+repository. For integration guidance, use the canonical
+[Agent quickstart](https://github.com/agentoffernetwork/protocol/blob/main/v0.3/quickstarts/agent.md)
+or
+[Partner quickstart](https://github.com/agentoffernetwork/protocol/blob/main/v0.3/quickstarts/partner.md).
 
 ## Code of Conduct
 

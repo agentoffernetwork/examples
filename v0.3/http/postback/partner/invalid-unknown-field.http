@@ -1,0 +1,9 @@
+### Provider -> AON current v0.3 rejected payload
+POST https://api.agentoffernetwork.org/v1/postback/019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae001 HTTP/1.1
+Content-Type: application/json
+AON-Protocol-Version: 0.3
+
+{"event_name":"subscription","aon_tracking_id":"trk_01_click_abc","amount":"120.00","currency":"USD","event_id":"evt_01J0AONCONVERSION000001","version":"0.3"}
+
+### Expected 400: data is {}, extra.result is rejected, and extra.reason is invalid_payload.
+### The protocol version belongs only in AON-Protocol-Version, never in the JSON body.

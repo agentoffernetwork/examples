@@ -1,0 +1,8 @@
+{
+  "event_name": "subscription",
+  "aon_tracking_id": "trk_01_click_abc",
+  "amount": "120.00",
+  "currency": "USD",
+  "event_id": "evt_01J0AONCONVERSION000001",
+  "version": "0.3"
+}

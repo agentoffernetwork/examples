@@ -1,0 +1,14 @@
+### AON -> Agent current v0.3 first success
+POST /webhook/aon/conversion?source=aon&delivery=conversion HTTP/1.1
+Host: agent.example.com
+Content-Type: application/json
+AON-Protocol-Version: 0.3
+X-AON-Key: aon_cb_v2
+X-AON-Timestamp: 1776450600
+X-AON-Signature: 8b0d7aa29c9717dc0fdcb278237050d6a5c1ca816ad0b6560b8240722304a5b8
+
+{"event_id":"evt_01J0AONCONVERSION000001","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","event_name":"subscription","amount":120,"currency":"USD","sub_id":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}
+
+### Verify the exact request target and raw body before JSON parsing, then atomically
+### store (agent_id, event_id) with its body digest. Return 2xx for a first delivery
+### or identical replay; return 409 for the same id with a different body.
