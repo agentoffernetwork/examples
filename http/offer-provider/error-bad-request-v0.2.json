@@ -1,6 +1,0 @@
-{
-  "code": "BAD_REQUEST",
-  "message": "intent.content must contain at least one item",
-  "data": {},
-  "extra": {}
-}

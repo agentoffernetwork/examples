@@ -1,2 +1,0 @@
-GET https://api.agentoffernetwork.org/v1/postback/partner-demo?aon_tracking_id=019dd208-27d2-7673-b16f-6897fa120303&event_name=subscription&amount=120.00&currency=USD&order_id=order_123&partner_txn_id=partner_txn_456&event_id=partner_event_789 HTTP/1.1
-X-Forwarded-For: 203.0.113.9
