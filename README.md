@@ -1,49 +1,31 @@
 # AgentOffer Examples
 
-Canonical HTTP payloads and fixed protocol vectors for AgentOffer integrations.
+Canonical HTTP payloads for AgentOffer integrations.
 
-**Current normative contract: Protocol v0.2**
+## Current contract
 
-These files illustrate the checked-in v0.2 source contract. They do not prove
-hosted runtime availability. Validate them with the schema repository gate
-instead of treating an example as an independent field definition.
+Choose the flow you are implementing. The `v0.3/` directory carries the
+release boundary while current example filenames remain stable and
+unversioned. These payloads do not claim deployment or runtime availability.
 
-## v0.2 examples
+## Start here
 
-| Surface | Files |
-|---|---|
-| Minimal Query request | `http/offer-query-request-v0.2-minimal.json` |
-| Full Query request | `http/offer-query-request-v0.2-full.json` |
-| Protocol Query success | `http/offer-response-v0.2.json` |
-| Hosted Query wrapper | `http/offer-query-hosted-response-v0.2.json` |
-| Provider request | `http/offer-provider/basic-query-v0.2.json`, `full-query-v0.2.json` |
-| Provider response | `http/offer-provider/success-v0.2.json`, `error-bad-request-v0.2.json` |
-| Partner conversion | `http/postback/partner/basic-conversion-v0.2.json` |
-| Agent conversion | `http/postback/agent/basic-conversion.json` and fixed signing vectors |
+- [Query request and response](v0.3/http/offer-query.json)
+- [Hosted query response](v0.3/http/offer-query-hosted-response.json)
+- [Offer control](v0.3/http/offer-control.json)
+- [Provider Postback success](v0.3/http/postback/partner/basic-conversion.http)
+- [Provider Postback rejection](v0.3/http/postback/partner/invalid-unknown-field.http)
+- [Agent Postback success](v0.3/http/postback/agent/basic-conversion.http)
+- [Agent Postback retry sequence](v0.3/http/postback/agent/retry-scenario.http)
+- [OfferProvider HMAC signing vectors](v0.3/http/offer-provider/hmac-signing-cases.md)
+- [Contract schemas](https://github.com/agentoffernetwork/schema)
+- [Agent and Partner guides](https://github.com/agentoffernetwork/protocol)
 
-The protocol Query success payload is exactly `{request_id, offers[]}`.
-`offer-query-hosted-response-v0.2.json` demonstrates that a hosted service may
-place this payload inside `data`; the outer `{code,message,data,extra}` object
-is transport-specific and must not validate as the protocol payload.
+## Historical contracts
 
-The Provider success body is the raw protocol success payload, without a
-hosted wrapper. Provider error examples use the Provider error envelope.
-
-Both Postback directions use required `event_name` and exclude legacy
-`conversion_type` and `bid_amount` fields.
-
-## Validate
-
-From `protocol/github-repos/schema`:
-
-```bash
-npm ci --ignore-scripts
-npm run test:v0.2-baseline
-```
-
-The manifest in
-`schema/fixtures/protocol-v0.2-contract-vectors.json` identifies every
-fixture, specification reference, enforcement layer, and expected result.
+Historical v0.1 and v0.2 material is retained outside `main` on
+`legacy/v0.1` and `legacy/v0.2`. Use the immutable `v0.1.0-legacy` and
+`v0.2.0-legacy` tags for durable references.
 
 ## Safe placeholder rules
 
@@ -51,12 +33,5 @@ fixture, specification reference, enforcement layer, and expected result.
 - Never commit real bearer tokens, callback secrets, user email addresses, or
   phone numbers.
 - Use decimal strings where the protocol schema requires decimal strings.
-- Preserve the exact compact Agent Postback body when reproducing HMAC vectors.
-
-## Historical material
-
-Unversioned and v0.1 examples are retained for historical inspection only.
-They are not the current new-integration path and are not part of the v0.2
-baseline gate.
 
 Licensed under [Apache License 2.0](LICENSE).
