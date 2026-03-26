@@ -1,0 +1,95 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13e",
+  "version": "1.0",
+  "offer_info": {
+    "title": "Aurex Nova Pro Wireless Noise Cancelling Earbuds",
+    "offer_type": "physical_product",
+    "category": {
+      "type": "electronics",
+      "attributes": {
+        "sub_type": "audio",
+        "brand": "Aurex",
+        "model": "Nova Pro",
+        "condition": "new",
+        "specifications": {
+          "noise_cancellation": "Adaptive",
+          "battery_life": "Up to 30 hours total",
+          "bluetooth": "5.4",
+          "audio": "Hi-Res Audio Wireless",
+          "water_resistance": "IPX4"
+        },
+        "warranty_months": 24,
+        "connectivity": ["Bluetooth 5.4", "USB-C"]
+      },
+      "commercial": {
+        "price": {
+          "amount": "399.00",
+          "currency": "USD"
+        },
+        "availability": "available",
+        "stock": 5000
+      }
+    },
+    "description": "Premium truly wireless noise cancelling earbuds with high-resolution audio quality, 30-hour battery life, and adaptive sound control.",
+    "source_offer_id": "adx_inventory_aurex_nova_pro",
+    "start_at": "2026-01-01T00:00:00Z",
+    "expire_at": "2026-12-31T23:59:59Z",
+    "status": "active",
+    "audit_status": "pass",
+    "priority": 10
+  },
+  "material": [
+    {
+      "image_url": "https://aurex.example/nova_pro_icon.png",
+      "tag": "logo",
+      "format": "image"
+    },
+    {
+      "image_url": "https://aurex.example/nova_pro_300x250.jpg",
+      "tag": "banner",
+      "format": "image",
+      "size": "300x250"
+    }
+  ],
+  "conversion_rule": {
+    "trigger": "purchase",
+    "window_hours": 30,
+    "attribution_type": "last_click"
+  },
+  "frequency_capping": {
+    "per_user_day": 3,
+    "per_user_total": 8
+  },
+  "tags": ["electronics", "audio", "earbuds", "noise_cancelling", "wireless"],
+  "entity": {
+    "id": "ent_aurex",
+    "name": "Aurex",
+    "type": "brand",
+    "description": "Consumer electronics company specializing in premium audio and wearable technology.",
+    "website": "https://www.aurex.example"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "Buy now",
+    "description": "Redirect to the official product purchase page with free 2-day shipping.",
+    "payload": {
+      "target": "https://shop.aurex.example/products/nova-pro",
+      "requires_auth": false,
+      "platform": "web"
+    }
+  },
+  "targeting": [
+    {
+      "geo": {
+        "include": ["US", "CA"]
+      },
+      "language": "en",
+      "device_type": ["mobile", "desktop", "tablet"]
+    }
+  ],
+  "commission": {
+    "amount": "18.00",
+    "currency": "USD",
+    "model": "fixed"
+  }
+}

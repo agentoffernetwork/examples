@@ -1,0 +1,59 @@
+{
+  "trace_id": "0195ef98-90af-7e1f-b57d-1130cf0c57f2",
+  "offers": [
+    {
+      "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
+      "version": "1.0",
+      "offer_info": {
+        "title": "TeamFlow Pro Plan",
+        "offer_type": "online_service",
+        "category": {
+          "type": "software_saas",
+          "attributes": {
+            "sub_type": "project_management",
+            "plan_type": "paid",
+            "platform": ["web", "desktop", "mobile"],
+            "seats_included": 10
+          },
+          "commercial": {
+            "price": {
+              "amount": "10.00",
+              "currency": "USD"
+            },
+            "availability": "available"
+          }
+        },
+        "description": "Collaborative workspace for docs, wikis, and project planning."
+      },
+      "material": [
+        {
+          "image_url": "https://teamflow.example/pro_plan_300x250.jpg",
+          "tag": "banner",
+          "format": "image",
+          "size": "300x250"
+        }
+      ],
+      "entity": {
+        "id": "ent_teamflow",
+        "name": "TeamFlow",
+        "type": "service_provider",
+        "description": "Productivity software provider.",
+        "website": "https://www.teamflow.example"
+      },
+      "action": {
+        "type": "web_redirect",
+        "name": "Start free trial",
+        "payload": {
+          "target": "https://www.teamflow.example/signup"
+        }
+      },
+      "commission": {
+        "amount": "10.00",
+        "currency": "USD",
+        "model": "fixed"
+      }
+    }
+  ],
+  "has_more": false,
+  "total": 1
+}

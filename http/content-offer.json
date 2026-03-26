@@ -1,0 +1,89 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e141",
+  "version": "1.0",
+  "offer_info": {
+    "title": "Mastering AI Agent Workflows Course",
+    "offer_type": "content",
+    "category": {
+      "type": "education",
+      "attributes": {
+        "sub_type": "online_course",
+        "format": "online",
+        "subject": "AI Agent Workflows",
+        "level": "intermediate",
+        "duration": "12 hours",
+        "instructor": "SkillForge Academy",
+        "certification": true,
+        "language": "en"
+      },
+      "commercial": {
+        "price": {
+          "amount": "79.00",
+          "currency": "USD"
+        },
+        "availability": "available"
+      }
+    },
+    "description": "Self-paced online video course covering AI agent workflow design, orchestration, and production deployment for developers and automation engineers.",
+    "source_offer_id": "adx_inventory_ai_course_101",
+    "start_at": "2026-01-01T00:00:00Z",
+    "expire_at": "2026-09-30T23:59:59Z",
+    "status": "active",
+    "audit_status": "pass",
+    "priority": 12
+  },
+  "material": [
+    {
+      "image_url": "https://skillforge.example/course_icon.png",
+      "tag": "logo",
+      "format": "image"
+    },
+    {
+      "image_url": "https://skillforge.example/ai_agent_course_300x250.jpg",
+      "tag": "banner",
+      "format": "image",
+      "size": "300x250"
+    }
+  ],
+  "conversion_rule": {
+    "trigger": "course_enroll",
+    "window_hours": 72,
+    "attribution_type": "last_click"
+  },
+  "frequency_capping": {
+    "per_user_day": 3,
+    "per_user_total": 10
+  },
+  "tags": ["ai", "agent", "automation", "course", "developer", "llm"],
+  "entity": {
+    "id": "ent_skillforge",
+    "name": "SkillForge Academy",
+    "type": "creator",
+    "description": "Professional training provider focused on AI, automation, and software development education.",
+    "website": "https://www.skillforge.example"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "Enroll now",
+    "description": "Redirect to the course enrollment page with lifetime access and bonus materials.",
+    "payload": {
+      "target": "https://www.skillforge.example/courses/ai-agent-workflows",
+      "requires_auth": true,
+      "platform": "web"
+    }
+  },
+  "targeting": [
+    {
+      "geo": {
+        "include": ["US", "AU", "SG", "GB", "CA"]
+      },
+      "language": "en",
+      "device_type": ["mobile", "desktop", "tablet"]
+    }
+  ],
+  "commission": {
+    "amount": "20.00",
+    "currency": "USD",
+    "model": "fixed"
+  }
+}

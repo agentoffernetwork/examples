@@ -1,0 +1,84 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e143",
+  "version": "1.0",
+  "offer_info": {
+    "title": "Atlas Rewards Credit Card",
+    "offer_type": "online_service",
+    "category": {
+      "type": "financial_service",
+      "attributes": {
+        "sub_type": "credit_card",
+        "provider_license": "FIN-EXAMPLE-20260101",
+        "annual_fee": "$95",
+        "apr_range": "21.49%–28.49% variable",
+        "rewards_type": "points",
+        "sign_up_bonus": "80,000 bonus points after spending $4,000 in the first 3 months",
+        "min_credit_score": 700,
+        "foreign_transaction_fee": "0%"
+      },
+      "commercial": {
+        "price": {
+          "amount": "95.00",
+          "currency": "USD"
+        },
+        "availability": "available"
+      }
+    },
+    "description": "Premium travel rewards credit card with 75,000 bonus points after spending $4,000 in the first 3 months. No foreign transaction fees, trip cancellation insurance, and primary car rental coverage.",
+    "source_offer_id": "adx_inventory_atlas_rewards",
+    "start_at": "2026-01-01T00:00:00Z",
+    "expire_at": "2026-12-31T23:59:59Z",
+    "status": "active",
+    "audit_status": "pass",
+    "priority": 10
+  },
+  "material": [
+    {
+      "image_url": "https://atlasbank.example/rewards_card_300x250.jpg",
+      "tag": "banner",
+      "format": "image",
+      "size": "300x250"
+    }
+  ],
+  "conversion_rule": {
+    "trigger": "application_approved",
+    "window_hours": 720,
+    "attribution_type": "last_click"
+  },
+  "frequency_capping": {
+    "per_user_day": 1,
+    "per_user_total": 3
+  },
+  "tags": ["credit_card", "travel", "rewards", "finance"],
+  "entity": {
+    "id": "ent_atlas_bank",
+    "name": "Atlas Bank",
+    "type": "financial_institution",
+    "description": "Full-service financial institution offering banking, credit cards, and investment services.",
+    "website": "https://www.atlasbank.example"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "Apply now",
+    "description": "Redirect to the Atlas Rewards credit card application page.",
+    "payload": {
+      "target": "https://cards.atlasbank.example/apply/rewards",
+      "requires_auth": false,
+      "platform": "web"
+    }
+  },
+  "targeting": [
+    {
+      "geo": {
+        "include": ["US"]
+      },
+      "language": "en",
+      "device_type": ["mobile", "desktop", "tablet"]
+    }
+  ],
+  "commission": {
+    "amount": "80.00",
+    "currency": "USD",
+    "model": "cpa"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
+  "version": "1.0",
+  "offer_info": {
+    "title": "TeamFlow Pro Plan",
+    "offer_type": "online_service",
+    "category": {
+      "type": "software_saas",
+      "attributes": {
+        "sub_type": "project_management",
+        "plan_type": "paid",
+        "platform": ["web", "desktop", "mobile"]
+      },
+      "commercial": {
+        "price": {
+          "amount": "10.00",
+          "currency": "USD"
+        },
+        "availability": "available"
+      }
+    },
+    "description": "Collaborative workspace for docs, wikis, and project planning. Per member per month billing."
+  },
+  "material": [],
+  "entity": {
+    "id": "ent_teamflow",
+    "name": "TeamFlow"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "Start free trial",
+    "payload": {
+      "target": "https://www.teamflow.example/signup"
+    }
+  }
+}

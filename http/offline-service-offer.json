@@ -1,0 +1,94 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e142",
+  "version": "1.0",
+  "offer_info": {
+    "title": "The Manhattan Grand — Deluxe King Room",
+    "offer_type": "offline_service",
+    "category": {
+      "type": "travel_hospitality",
+      "attributes": {
+        "sub_type": "hotel",
+        "destination": {
+          "city": "New York",
+          "country": "US"
+        },
+        "star_rating": 5,
+        "amenities": [
+          "Rooftop pool",
+          "Spa & wellness center",
+          "24-hour concierge",
+          "Complimentary Wi-Fi",
+          "Fitness center"
+        ],
+        "room_type": "Deluxe King",
+        "breakfast_included": true,
+        "cancellation_policy": "Free cancellation up to 48 hours before check-in",
+        "max_guests": 2
+      },
+      "commercial": {
+        "price": {
+          "amount": "420.00",
+          "currency": "USD"
+        },
+        "availability": "limited",
+        "stock": 15
+      }
+    },
+    "description": "Luxury 5-star hotel in Midtown Manhattan with rooftop pool, full-service spa, and complimentary breakfast. Walking distance to Central Park and Times Square.",
+    "source_offer_id": "adx_inventory_manhattan_grand_deluxe",
+    "start_at": "2026-04-01T00:00:00Z",
+    "expire_at": "2026-10-31T23:59:59Z",
+    "status": "active",
+    "audit_status": "pass",
+    "priority": 9
+  },
+  "material": [
+    {
+      "image_url": "https://manhattangrand.example/deluxe_king_300x250.jpg",
+      "tag": "banner",
+      "format": "image",
+      "size": "300x250"
+    }
+  ],
+  "conversion_rule": {
+    "trigger": "booking_complete",
+    "window_hours": 168,
+    "attribution_type": "last_click"
+  },
+  "frequency_capping": {
+    "per_user_day": 2,
+    "per_user_total": 5
+  },
+  "tags": ["hotel", "luxury", "manhattan", "new_york", "travel", "5_star"],
+  "entity": {
+    "id": "ent_manhattan_grand",
+    "name": "The Manhattan Grand Hotel",
+    "type": "service_provider",
+    "description": "Award-winning luxury hotel in the heart of Midtown Manhattan.",
+    "website": "https://www.manhattangrand.example"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "Book now",
+    "description": "Redirect to the hotel booking page to reserve your room.",
+    "payload": {
+      "target": "https://www.manhattangrand.example/book/deluxe-king",
+      "requires_auth": false,
+      "platform": "web"
+    }
+  },
+  "targeting": [
+    {
+      "geo": {
+        "include": ["US", "GB", "CA"]
+      },
+      "language": "en",
+      "device_type": ["mobile", "desktop", "tablet"]
+    }
+  ],
+  "commission": {
+    "amount": "42.00",
+    "currency": "USD",
+    "model": "cpa"
+  }
+}
