@@ -47,9 +47,10 @@
     }
   ],
   "conversion_rule": {
-    "trigger": "app_install",
-    "window_hours": 168,
-    "attribution_type": "last_click"
+    "click_window_hours": 168,
+    "attribution_model": "last_click",
+    "accepted_types": ["install"],
+    "dedup_strategy": "first"
   },
   "frequency_capping": {
     "per_user_day": 3,
@@ -83,8 +84,8 @@
     }
   ],
   "commission": {
+    "model": "cpi",
     "amount": "3.50",
-    "currency": "USD",
-    "model": "cpa"
+    "currency": "USD"
   }
 }

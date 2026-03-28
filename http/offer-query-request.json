@@ -28,6 +28,11 @@
       }
     ]
   },
+  "filter": {
+    "category_types": ["travel_hospitality"],
+    "commission_models": ["cps", "cpa"],
+    "availability": ["available", "limited"]
+  },
   "pagination": {
     "limit": 5,
     "offset": 0

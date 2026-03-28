@@ -46,9 +46,10 @@
     }
   ],
   "conversion_rule": {
-    "trigger": "course_enroll",
-    "window_hours": 72,
-    "attribution_type": "last_click"
+    "click_window_hours": 72,
+    "attribution_model": "last_click",
+    "accepted_types": ["sale"],
+    "dedup_strategy": "first"
   },
   "frequency_capping": {
     "per_user_day": 3,
@@ -82,8 +83,8 @@
     }
   ],
   "commission": {
+    "model": "cpa",
     "amount": "20.00",
-    "currency": "USD",
-    "model": "fixed"
+    "currency": "USD"
   }
 }

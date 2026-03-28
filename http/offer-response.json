@@ -47,10 +47,18 @@
           "target": "https://www.teamflow.example/signup"
         }
       },
+      "conversion_rule": {
+        "click_window_hours": 720,
+        "attribution_model": "last_click",
+        "accepted_types": ["trial", "subscription"],
+        "dedup_strategy": "first"
+      },
       "commission": {
-        "amount": "10.00",
+        "model": "cps",
+        "rate": "0.20",
         "currency": "USD",
-        "model": "fixed"
+        "payout_delay_days": 7,
+        "validation_window_days": 3
       }
     }
   ],

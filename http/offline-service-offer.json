@@ -51,9 +51,10 @@
     }
   ],
   "conversion_rule": {
-    "trigger": "booking_complete",
-    "window_hours": 168,
-    "attribution_type": "last_click"
+    "click_window_hours": 168,
+    "attribution_model": "last_click",
+    "accepted_types": ["sale"],
+    "dedup_strategy": "first"
   },
   "frequency_capping": {
     "per_user_day": 2,
@@ -87,8 +88,8 @@
     }
   ],
   "commission": {
+    "model": "cpa",
     "amount": "42.00",
-    "currency": "USD",
-    "model": "cpa"
+    "currency": "USD"
   }
 }

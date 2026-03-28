@@ -52,9 +52,10 @@
     }
   ],
   "conversion_rule": {
-    "trigger": "purchase",
-    "window_hours": 30,
-    "attribution_type": "last_click"
+    "click_window_hours": 720,
+    "attribution_model": "last_click",
+    "accepted_types": ["sale"],
+    "dedup_strategy": "first"
   },
   "frequency_capping": {
     "per_user_day": 3,
@@ -88,8 +89,10 @@
     }
   ],
   "commission": {
-    "amount": "18.00",
+    "model": "cps",
+    "rate": "0.10",
     "currency": "USD",
-    "model": "fixed"
+    "payout_delay_days": 14,
+    "validation_window_days": 7
   }
 }
