@@ -13,7 +13,7 @@ Describe the example change and its motivation.
 
 Confirm the example validates against the current schema:
 ```bash
-ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d <your-file>
+ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d <your-file> --spec=draft2020
 ```
 
 ## Protocol Version

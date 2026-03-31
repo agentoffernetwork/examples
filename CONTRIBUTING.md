@@ -32,11 +32,11 @@ This repository owns practical request/response payloads, SDK code snippets, and
 npm install -g ajv-cli
 
 # Validate a single offer
-ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d http/notion-offer.json
+ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d http/notion-offer.json --spec=draft2020
 
 # Validate all offers
 for f in http/*-offer.json; do
-  ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d "$f"
+  ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d "$f" --spec=draft2020
 done
 ```
 

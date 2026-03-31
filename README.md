@@ -65,7 +65,8 @@ npm install -g ajv-cli
 # Validate an offer
 ajv validate \
   -s ../schema/json-schema/offer-schema-v0.1.json \
-  -d http/notion-offer.json
+  -d http/notion-offer.json \
+  --spec=draft2020
 ```
 
 ## Related Repositories

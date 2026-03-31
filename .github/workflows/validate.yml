@@ -51,7 +51,7 @@ jobs:
           schema="_schema/json-schema/offer-schema-v0.1.json"
           failed=0
           for f in http/*-offer.json; do
-            if ajv validate -s "$schema" -d "$f" 2>/dev/null; then
+            if ajv validate -s "$schema" -d "$f" --spec=draft2020 2>/dev/null; then
               echo "PASS: $f"
             else
               echo "FAIL: $f"
