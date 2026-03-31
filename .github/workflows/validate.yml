@@ -1,0 +1,61 @@
+name: Validate Examples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  json-format:
+    name: JSON Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check all JSON files are well-formed
+        run: |
+          failed=0
+          for f in $(find . -name '*.json' -not -path '*/node_modules/*'); do
+            if python3 -m json.tool "$f" > /dev/null 2>&1; then
+              echo "OK: $f"
+            else
+              echo "FAIL: $f"
+              failed=1
+            fi
+          done
+          exit $failed
+
+  schema-validation:
+    name: Validate Against Schema
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout schema repo
+        uses: actions/checkout@v4
+        with:
+          repository: agentoffernetwork/schema
+          path: _schema
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Validate offer examples against schema
+        run: |
+          schema="_schema/json-schema/offer-schema-v0.1.json"
+          failed=0
+          for f in http/*-offer.json; do
+            if ajv validate -s "$schema" -d "$f" 2>/dev/null; then
+              echo "PASS: $f"
+            else
+              echo "FAIL: $f"
+              failed=1
+            fi
+          done
+          exit $failed

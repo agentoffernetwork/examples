@@ -5,14 +5,18 @@ title: "[bug] "
 labels: bug
 ---
 
-## Example
+## Summary
 
-Which example is wrong?
+Describe what is inaccurate or misleading.
 
-## Problem
+## Affected File
 
-What is inaccurate or misleading?
+Which example is wrong? (e.g., `http/notion-offer.json`)
 
-## Expected Example
+## Expected Behavior
 
-What should it show instead?
+What should the example show instead?
+
+## Steps to Reproduce
+
+Does the example fail schema validation? Include the validation command and error output if applicable.
