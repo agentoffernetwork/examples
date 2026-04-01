@@ -16,13 +16,6 @@
         "in_app_purchases": true,
         "supported_devices": ["iOS", "Android", "Windows", "PlayStation 5"],
         "languages": ["en", "zh", "ja", "ko"]
-      },
-      "commercial": {
-        "price": {
-          "amount": "0.00",
-          "currency": "USD"
-        },
-        "availability": "available"
       }
     },
     "description": "Free-to-play open-world action RPG with stylized graphics. Explore the new Tidelands region with underwater exploration, new characters, and story quests.",
@@ -35,13 +28,13 @@
   },
   "material": [
     {
-      "image_url": "https://skyforge.example/arcadia_tidelands_300x250.jpg",
+      "url": "https://skyforge.example/arcadia_tidelands_300x250.jpg",
       "tag": "banner",
       "format": "image",
-      "size": "300x250"
+      "dimensions": "300x250"
     },
     {
-      "image_url": "https://skyforge.example/arcadia_icon.png",
+      "url": "https://skyforge.example/arcadia_icon.png",
       "tag": "logo",
       "format": "image"
     }
@@ -52,15 +45,10 @@
     "accepted_types": ["install"],
     "dedup_strategy": "first"
   },
-  "frequency_capping": {
-    "per_user_day": 3,
-    "per_user_total": 10
-  },
-  "tags": ["game", "rpg", "open_world", "free_to_play", "fantasy"],
   "entity": {
     "id": "ent_skyforge",
     "name": "SkyForge Studios",
-    "type": "brand",
+    "type": "business",
     "description": "Interactive entertainment developer and publisher known for open-world RPG titles.",
     "website": "https://www.skyforge.example"
   },
@@ -70,7 +58,6 @@
     "description": "Open the app store listing or launch the game directly on mobile.",
     "payload": {
       "target": "skyforge://arcadia/launch?campaign=aon_tidelands",
-      "requires_auth": false,
       "platform": "ios"
     }
   },

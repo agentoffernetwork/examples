@@ -15,13 +15,6 @@
         "instructor": "SkillForge Academy",
         "certification": true,
         "language": "en"
-      },
-      "commercial": {
-        "price": {
-          "amount": "79.00",
-          "currency": "USD"
-        },
-        "availability": "available"
       }
     },
     "description": "Self-paced online video course covering AI agent workflow design, orchestration, and production deployment for developers and automation engineers.",
@@ -34,15 +27,15 @@
   },
   "material": [
     {
-      "image_url": "https://skillforge.example/course_icon.png",
+      "url": "https://skillforge.example/course_icon.png",
       "tag": "logo",
       "format": "image"
     },
     {
-      "image_url": "https://skillforge.example/ai_agent_course_300x250.jpg",
+      "url": "https://skillforge.example/ai_agent_course_300x250.jpg",
       "tag": "banner",
       "format": "image",
-      "size": "300x250"
+      "dimensions": "300x250"
     }
   ],
   "conversion_rule": {
@@ -51,15 +44,10 @@
     "accepted_types": ["sale"],
     "dedup_strategy": "first"
   },
-  "frequency_capping": {
-    "per_user_day": 3,
-    "per_user_total": 10
-  },
-  "tags": ["ai", "agent", "automation", "course", "developer", "llm"],
   "entity": {
     "id": "ent_skillforge",
     "name": "SkillForge Academy",
-    "type": "creator",
+    "type": "individual",
     "description": "Professional training provider focused on AI, automation, and software development education.",
     "website": "https://www.skillforge.example"
   },
@@ -68,9 +56,7 @@
     "name": "Enroll now",
     "description": "Redirect to the course enrollment page with lifetime access and bonus materials.",
     "payload": {
-      "target": "https://www.skillforge.example/courses/ai-agent-workflows",
-      "requires_auth": true,
-      "platform": "web"
+      "target": "https://www.skillforge.example/courses/ai-agent-workflows"
     }
   },
   "targeting": [

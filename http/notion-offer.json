@@ -10,13 +10,6 @@
         "sub_type": "project_management",
         "plan_type": "paid",
         "platform": ["web", "desktop", "mobile"]
-      },
-      "commercial": {
-        "price": {
-          "amount": "10.00",
-          "currency": "USD"
-        },
-        "availability": "available"
       }
     },
     "description": "Collaborative workspace for docs, wikis, and project planning. Per member per month billing."
@@ -32,5 +25,10 @@
     "payload": {
       "target": "https://www.teamflow.example/signup"
     }
+  },
+  "commission": {
+    "model": "cps",
+    "amount": "3.00",
+    "currency": "USD"
   }
 }

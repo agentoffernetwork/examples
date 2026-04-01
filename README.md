@@ -10,6 +10,7 @@
   <a href="#status"><img src="https://img.shields.io/badge/version-v0.1-orange.svg" alt="Version" /></a>
   <a href="#status"><img src="https://img.shields.io/badge/status-Draft-yellow.svg" alt="Status" /></a>
   <a href="https://github.com/agentoffernetwork/examples/issues"><img src="https://img.shields.io/github/issues/agentoffernetwork/examples.svg" alt="Issues" /></a>
+  <a href="https://github.com/agentoffernetwork/examples/actions/workflows/validate.yml"><img src="https://github.com/agentoffernetwork/examples/actions/workflows/validate.yml/badge.svg" alt="Validate" /></a>
 </p>
 
 ---
