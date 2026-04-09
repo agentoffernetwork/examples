@@ -26,7 +26,7 @@
       "target": "https://www.teamflow.example/signup"
     }
   },
-  "commission": {
+  "bid": {
     "model": "cps",
     "amount": "3.00",
     "currency": "USD"

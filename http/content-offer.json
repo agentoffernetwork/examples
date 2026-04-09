@@ -68,7 +68,7 @@
       "device_type": ["mobile", "desktop", "tablet"]
     }
   ],
-  "commission": {
+  "bid": {
     "model": "cpa",
     "amount": "20.00",
     "currency": "USD"

@@ -53,7 +53,7 @@
         "accepted_types": ["trial", "subscription"],
         "dedup_strategy": "first"
       },
-      "commission": {
+      "bid": {
         "model": "cps",
         "rate": "0.20",
         "currency": "USD",

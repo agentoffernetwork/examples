@@ -31,7 +31,7 @@
 | [`notion-offer.json`](http/notion-offer.json) | software_saas | web_redirect | **Minimal** -- REQUIRED + RECOMMENDED only |
 | [`product-offer.json`](http/product-offer.json) | electronics | web_redirect | Full offer with all OPTIONAL fields |
 | [`content-offer.json`](http/content-offer.json) | education | web_redirect | Includes `requires_auth: true` |
-| [`offline-service-offer.json`](http/offline-service-offer.json) | travel_hospitality | web_redirect | CPA commission model |
+| [`offline-service-offer.json`](http/offline-service-offer.json) | travel_hospitality | web_redirect | CPA bid model |
 | [`financial-service-offer.json`](http/financial-service-offer.json) | financial_service | web_redirect | Regulatory attributes |
 | [`entertainment-offer.json`](http/entertainment-offer.json) | entertainment | app_deep_link | Deep link action type |
 | [`offer-query-request.json`](http/offer-query-request.json) | -- | -- | Structured query with intent + context |

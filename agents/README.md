@@ -35,7 +35,7 @@ Agent formats and presents recommendations
   v
 User clicks an offer link
   --> Agent calls aon_report_click(offer_id, tracking_url)
-  --> Attribution tracked, commission earned
+  --> Attribution tracked, bid earned
 ```
 
 ## Contributing

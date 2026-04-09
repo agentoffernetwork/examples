@@ -70,7 +70,7 @@
       "device_type": ["mobile", "desktop"]
     }
   ],
-  "commission": {
+  "bid": {
     "model": "cpi",
     "amount": "3.50",
     "currency": "USD"

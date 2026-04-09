@@ -73,7 +73,7 @@
       "device_type": ["mobile", "desktop", "tablet"]
     }
   ],
-  "commission": {
+  "bid": {
     "model": "cps",
     "amount": "39.90",
     "currency": "USD"
