@@ -62,11 +62,9 @@ These examples cover three protocol surfaces:
 You can validate any offer example against the official JSON Schema:
 
 ```bash
-# Install ajv-cli
-npm install -g ajv-cli
-
-# Validate an offer
-ajv validate \
+# Validate an offer with temporary tooling (no local install required)
+npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
+  ajv validate \
   -s ../schema/json-schema/offer-schema-v0.1.json \
   -d http/notion-offer.json \
   --spec=draft2020

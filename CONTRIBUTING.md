@@ -28,8 +28,12 @@ This repository owns practical request/response payloads, SDK code snippets, and
 ## Validating Examples
 
 ```bash
-# Install ajv-cli
-npm install -g ajv-cli
+# Validate with temporary tooling (no local install required)
+npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
+  ajv validate \
+  --spec=draft2020 \
+  -s ../schema/json-schema/offer-schema-v0.1.json \
+  -d http/notion-offer.json
 
 # Validate a single offer
 ajv validate -s ../schema/json-schema/offer-schema-v0.1.json -d http/notion-offer.json --spec=draft2020
