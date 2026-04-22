@@ -1,0 +1,20 @@
+### Partner -> AON Postback: Refund Event
+### See postback.md Part B for the normative specification.
+
+POST /v1/postback HTTP/1.1
+Host: api.agentoffernetwork.com
+Content-Type: application/json
+X-AON-Key: partner-appkey-demo
+X-AON-Timestamp: 1776537000
+X-AON-Nonce: f7a8b9c0-d1e2-3456-7890-abcdef123456
+X-AON-Signature: 3864106ca6d88f13bde2538311ad3930dd0a01bc9ddb49e0ac2b17379297f932
+
+{"event_id":"evt_pb_YBM6BHZ8QENV0R5R7JYH6VZ46S","event_type":"refund","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-22T14:30:00Z","original_event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","refund_amount":120,"currency":"USD","refund_reason":"Customer returned the product within 30-day window"}
+
+### Expected Response: 200 OK
+# {
+#   "code": "SUCCESS",
+#   "message": "",
+#   "data": {},
+#   "extra": { "event_id": "evt_pb_YBM6BHZ8QENV0R5R7JYH6VZ46S", "deduplicated": false }
+# }

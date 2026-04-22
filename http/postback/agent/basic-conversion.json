@@ -1,0 +1,14 @@
+{
+  "event_id": "evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP",
+  "event_type": "conversion",
+  "tracking_id": "trk_01_click_abc",
+  "offer_id": "ao_01HX2B3C4D5E6F7G8H9J0KABCD",
+  "agent_id": "agt_assistant_123",
+  "conversion_type": "sale",
+  "amount": 120,
+  "currency": "USD",
+  "bid_amount": 24,
+  "sub_id_1": "homepage_widget",
+  "sub_id_2": "cohort_a",
+  "timestamp": "2026-03-21T03:10:00Z"
+}

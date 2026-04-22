@@ -1,0 +1,20 @@
+### Partner -> AON Postback: Conversion Event
+### See postback.md Part B for the normative specification.
+
+POST /v1/postback HTTP/1.1
+Host: api.agentoffernetwork.com
+Content-Type: application/json
+X-AON-Key: partner-appkey-demo
+X-AON-Timestamp: 1776450600
+X-AON-Nonce: c3d4e5f6-a7b8-9012-cdef-123456789012
+X-AON-Signature: 5d6f95e2bf4a2a78f92497c6ec14bf45b50749ebe8d7bbe30e858c28765aded5
+
+{"event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-21T03:10:00Z","conversion_type":"sale","amount":120,"bid":24,"currency":"USD","sub_id_1":"homepage_widget","coupon_code":"SPRING2026"}
+
+### Expected Response: 200 OK
+# {
+#   "code": "SUCCESS",
+#   "message": "",
+#   "data": {},
+#   "extra": { "event_id": "evt_pb_NWS66E195DM66YEK30HJKSVVYN", "deduplicated": false }
+# }

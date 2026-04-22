@@ -1,0 +1,15 @@
+### AON -> Agent Postback: Basic Conversion (successful delivery)
+### See postback.md Part A for the normative specification.
+
+POST /webhook/aon/postback HTTP/1.1
+Host: agent.example.com
+Content-Type: application/json
+X-AON-Key: aon-agent-key-demo
+X-AON-Timestamp: 1776450600
+X-AON-Nonce: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+X-AON-Signature: 26d7befac5f006eec654903de2769c82c651c518ee0eab13ac2adcb78ee7e50b
+
+{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}
+
+### Expected: Agent returns HTTP 2xx (any 2xx status is treated as success).
+### AON ignores the response body; Agent is not required to return an ApiResponse envelope.

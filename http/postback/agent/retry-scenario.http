@@ -1,0 +1,47 @@
+### AON -> Agent Postback: Retry Scenario
+### Demonstrates that event_id stays constant across retries while
+### X-AON-Nonce and X-AON-Timestamp MUST be regenerated for each attempt.
+### See postback.md Part A, Section 4.6 (Retry Policy) and Section 6 (Idempotency).
+
+### --- Attempt 1 (Immediate) ---
+
+POST /webhook/aon/postback HTTP/1.1
+Host: agent.example.com
+Content-Type: application/json
+X-AON-Key: aon-agent-key-demo
+X-AON-Timestamp: 1776450600
+X-AON-Nonce: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+X-AON-Signature: 26d7befac5f006eec654903de2769c82c651c518ee0eab13ac2adcb78ee7e50b
+
+{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}
+
+### Expected: Agent endpoint timeout or non-2xx response
+### AON waits 1 minute before Attempt 2
+
+### --- Attempt 2 (after 1 minute) ---
+### Note: same event_id, different nonce and timestamp
+
+POST /webhook/aon/postback HTTP/1.1
+Host: agent.example.com
+Content-Type: application/json
+X-AON-Key: aon-agent-key-demo
+X-AON-Timestamp: 1776450660
+X-AON-Nonce: e5f6a7b8-c9d0-1234-5678-abcdef012345
+X-AON-Signature: <recomputed-for-new-timestamp-and-nonce>
+
+{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}
+
+### Key observations:
+### 1. event_id is IDENTICAL across both attempts ("evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP")
+### 2. X-AON-Nonce is DIFFERENT (new UUIDv4 per attempt)
+### 3. X-AON-Timestamp is DIFFERENT (current Unix time at retry)
+### 4. X-AON-Signature is DIFFERENT (recomputed over new timestamp + nonce)
+### 5. Request body is IDENTICAL (same payload bytes)
+###
+### Retry schedule (5 attempts total):
+###   Attempt 1: Immediate
+###   Attempt 2: +1 minute
+###   Attempt 3: +5 minutes
+###   Attempt 4: +30 minutes
+###   Attempt 5: +2 hours
+### After 5 failures: permanently failed (~24h total window)

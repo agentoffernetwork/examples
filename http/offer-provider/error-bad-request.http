@@ -1,0 +1,29 @@
+### AON → Partner: malformed request (empty intent.content)
+
+POST https://partner.example.com/aon/v1/offers/query
+Content-Type: application/json
+X-AON-Key: aon-key-demo
+X-AON-Timestamp: 1776451200
+X-AON-Nonce: 1e2d3c4b-5a6f-4e8d-9c0b-1a2b3c4d5e6f
+X-AON-Signature: 4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b
+
+{
+  "context": {
+    "user_profile": { "viewer_id": "user_empty_intent" }
+  },
+  "intent": {
+    "content": []
+  }
+}
+
+### Partner → AON: ApiResponse-shaped error envelope
+
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "code": "BAD_REQUEST",
+  "message": "intent.content must contain at least one item",
+  "data": {},
+  "extra": {}
+}

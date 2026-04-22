@@ -1,0 +1,14 @@
+{
+  "event_id": "evt_pb_NWS66E195DM66YEK30HJKSVVYN",
+  "event_type": "conversion",
+  "tracking_id": "trk_01_click_abc",
+  "offer_id": "ao_01HX2B3C4D5E6F7G8H9J0KABCD",
+  "conversion_id": "partner_conv_98765",
+  "timestamp": "2026-03-21T03:10:00Z",
+  "conversion_type": "sale",
+  "amount": 120,
+  "bid": 24,
+  "currency": "USD",
+  "sub_id_1": "homepage_widget",
+  "coupon_code": "SPRING2026"
+}

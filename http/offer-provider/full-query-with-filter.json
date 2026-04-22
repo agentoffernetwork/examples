@@ -1,0 +1,50 @@
+{
+  "request_id": "0195f0a1-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+  "timestamp": "2026-04-15T14:35:00Z",
+  "test_mode": false,
+  "context": {
+    "platform": {
+      "name": "Claude",
+      "version": "claude-sonnet-4-6",
+      "channel": "sdk"
+    },
+    "session_id": "sess_0195f0a1-3c4d-5e6f-7a8b-9c0d1e2f3a4c",
+    "conversation_id": "conv_42",
+    "user_profile": {
+      "viewer_id": "user_345678",
+      "language": "en",
+      "interests": ["travel", "luxury", "hospitality"],
+      "device_info": {
+        "device_type": "mobile",
+        "os": "iOS",
+        "os_version": "17.4"
+      }
+    }
+  },
+  "intent": {
+    "content": [
+      {
+        "type": "input_text",
+        "text": "Book a 5-star hotel in Manhattan New York for next month"
+      },
+      {
+        "type": "input_image",
+        "image_url": "https://images.example.com/manhattan-skyline.jpg"
+      }
+    ]
+  },
+  "filter": {
+    "category_types": ["travel_hospitality"],
+    "bid_models": ["cps", "cpa"],
+    "status": ["active"],
+    "availability": ["available", "limited"],
+    "currency": "USD",
+    "max_price_amount": "500.00",
+    "country": "US",
+    "tags": ["luxury", "manhattan"]
+  },
+  "pagination": {
+    "limit": 10,
+    "offset": 0
+  }
+}

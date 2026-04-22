@@ -37,13 +37,15 @@
 | [`offer-query-request.json`](http/offer-query-request.json) | -- | -- | Structured query with intent + context |
 | [`offer-response.json`](http/offer-response.json) | -- | -- | Response envelope with trace_id |
 
-### SDK Examples (coming soon)
+### Additional Example Sets
 
-Code snippets showing how to use the [TypeScript SDK](https://www.npmjs.com/package/@agentoffernetwork/sdk) and [Python SDK](https://pypi.org/project/agentoffernetwork/) in real agent integrations.
+The current repository focuses on **canonical HTTP payload examples**.
 
-### Agent Workflow Examples (coming soon)
+- SDK-specific walkthroughs live with the published SDK packages and docs.
+- More end-to-end agent workflow examples are planned as future additions to this repo.
 
-End-to-end examples showing agents using AON for offer discovery, recommendation, and attribution tracking.
+This keeps the v0.1 examples surface honest: what is here today is ready to inspect and validate;
+what is not yet here is intentionally called out as future work rather than implied availability.
 
 ## Protocol Surfaces
 
@@ -82,6 +84,7 @@ ajv validate \
 
 - **Version:** `v0.1`
 - **Status:** `Draft`
+- **Release posture:** `Public beta for canonical payload examples`
 
 ## Contributing
 

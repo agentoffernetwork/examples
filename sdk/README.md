@@ -10,8 +10,8 @@ Code snippets showing how to use the AgentOffer SDKs in real agent integrations.
 
 | SDK | Install | Docs |
 |-----|---------|------|
-| TypeScript | `npm install @agentoffernetwork/sdk` | [README](https://github.com/agentoffernetwork/sdk) |
-| Python | `pip install agentoffernetwork` | [README](https://github.com/agentoffernetwork/sdk) |
+| TypeScript | `npm install @agentoffernetwork/sdk` | [README](https://github.com/agentoffernetwork/sdk/tree/main/typescript) |
+| Python | `pip install agentoffernetwork` | [README](https://github.com/agentoffernetwork/sdk/tree/main/python) |
 
 ## Planned Examples
 
@@ -31,7 +31,7 @@ const client = await initialize({
 });
 
 const { offers } = await client.queryOffers({
-  intent: { content: [{ type: 'text', text: 'project management tool' }] },
+  intent: { content: [{ type: 'input_text', text: 'project management tool' }] },
   limit: 5,
 });
 

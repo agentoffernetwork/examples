@@ -1,0 +1,111 @@
+### AON → Partner: full OfferProvider query with filter + pagination + multimodal intent
+
+POST https://partner.example.com/aon/v1/offers/query
+Content-Type: application/json
+X-AON-Key: aon-key-demo
+X-AON-Timestamp: 1776450900
+X-AON-Nonce: 7a1c9e2d-3f4b-4d8e-b1c2-d3e4f5a6b7c8
+X-AON-Signature: 9b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c
+X-AON-Test: false
+
+{
+  "request_id": "0195f0a1-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+  "timestamp": "2026-04-15T14:35:00Z",
+  "test_mode": false,
+  "context": {
+    "platform": {
+      "name": "Claude",
+      "version": "claude-sonnet-4-6",
+      "channel": "sdk"
+    },
+    "session_id": "sess_0195f0a1-3c4d-5e6f-7a8b-9c0d1e2f3a4c",
+    "conversation_id": "conv_42",
+    "user_profile": {
+      "viewer_id": "user_345678",
+      "language": "en",
+      "interests": ["travel", "luxury", "hospitality"],
+      "device_info": {
+        "device_type": "mobile",
+        "os": "iOS",
+        "os_version": "17.4"
+      }
+    }
+  },
+  "intent": {
+    "content": [
+      {
+        "type": "input_text",
+        "text": "Book a 5-star hotel in Manhattan New York for next month"
+      },
+      {
+        "type": "input_image",
+        "image_url": "https://images.example.com/manhattan-skyline.jpg"
+      }
+    ]
+  },
+  "filter": {
+    "category_types": ["travel_hospitality"],
+    "bid_models": ["cps", "cpa"],
+    "status": ["active"],
+    "availability": ["available", "limited"],
+    "currency": "USD",
+    "max_price_amount": "500.00",
+    "country": "US",
+    "tags": ["luxury", "manhattan"]
+  },
+  "pagination": {
+    "limit": 10,
+    "offset": 0
+  }
+}
+
+### Partner → AON: success envelope with pagination metadata
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "trace_id": "0195ef98-90af-7e1f-b57d-1130cf0c57f2",
+  "offers": [
+    {
+      "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e142",
+      "version": "1.0",
+      "offer_info": {
+        "title": "The Manhattan Grand — Deluxe King Room",
+        "offer_type": "offline_service",
+        "category": {
+          "type": "travel_hospitality",
+          "attributes": {
+            "property_type": "hotel",
+            "destination": { "city": "New York", "country": "US" },
+            "star_rating": 5
+          },
+          "commercial": {
+            "price": { "amount": "420.00", "currency": "USD" },
+            "availability": "limited"
+          }
+        },
+        "description": "Luxury 5-star hotel in Midtown Manhattan with rooftop pool and full-service spa."
+      },
+      "entity": {
+        "id": "ent_manhattan_grand",
+        "name": "The Manhattan Grand Hotel",
+        "type": "service_provider"
+      },
+      "action": {
+        "type": "web_redirect",
+        "name": "Book now",
+        "payload": { "target": "https://www.manhattangrand.example/book/deluxe-king" }
+      },
+      "bid": {
+        "model": "cps",
+        "rate": "0.10",
+        "currency": "USD",
+        "payout_delay_days": 14,
+        "validation_window_days": 7
+      }
+    }
+  ],
+  "has_more": true,
+  "total": 24
+}

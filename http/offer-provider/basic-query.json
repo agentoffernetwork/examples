@@ -1,0 +1,30 @@
+{
+  "request_id": "0195f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+  "timestamp": "2026-04-15T14:30:00Z",
+  "context": {
+    "platform": {
+      "name": "ChatGPT",
+      "version": "gpt-4o",
+      "channel": "plugin"
+    },
+    "session_id": "sess_0195f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3b",
+    "user_profile": {
+      "viewer_id": "user_789012",
+      "language": "en",
+      "interests": ["productivity", "saas"],
+      "device_info": {
+        "device_type": "desktop",
+        "os": "macOS",
+        "os_version": "14.4"
+      }
+    }
+  },
+  "intent": {
+    "content": [
+      {
+        "type": "input_text",
+        "text": "I need a collaborative docs and project management tool for my 10-person team"
+      }
+    ]
+  }
+}
