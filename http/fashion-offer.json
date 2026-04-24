@@ -1,0 +1,34 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e146",
+  "version": "1.0",
+  "offer_info": {
+    "title": "Northline Everyday Overshirt",
+    "offer_type": "physical_product",
+    "category": {
+      "type": "fashion",
+      "attributes": {
+        "sub_type": "clothing",
+        "gender": "unisex",
+        "size_range": "XS-XXL",
+        "material": "organic cotton twill"
+      }
+    },
+    "description": "A midweight overshirt built for everyday wear with a relaxed fit and organic cotton construction."
+  },
+  "entity": {
+    "id": "ent_northline",
+    "name": "Northline Apparel"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "View collection",
+    "payload": {
+      "target": "https://www.northline.example/products/everyday-overshirt"
+    }
+  },
+  "bid": {
+    "model": "cps",
+    "amount": "8.00",
+    "currency": "USD"
+  }
+}

@@ -17,10 +17,11 @@
 
 ## Quick Start
 
-1. Start with [`offer-query-request.json`](http/offer-query-request.json) to understand how agents search for offers
-2. Look at [`notion-offer.json`](http/notion-offer.json) for a minimal offer (REQUIRED + RECOMMENDED fields only)
-3. Compare with [`product-offer.json`](http/product-offer.json) for a full offer with all OPTIONAL fields
-4. See [`offer-response.json`](http/offer-response.json) for the query response envelope
+1. Start with the canonical [Category Taxonomy](https://github.com/agentoffernetwork/protocol/blob/main/specs/category-taxonomy.md) to understand the current public category surface
+2. Start with [`offer-query-request.json`](http/offer-query-request.json) to understand how agents search for offers
+3. Look at [`notion-offer.json`](http/notion-offer.json) for a minimal offer (REQUIRED + RECOMMENDED fields only)
+4. Compare with [`product-offer.json`](http/product-offer.json) for a full offer with all OPTIONAL fields
+5. See [`offer-response.json`](http/offer-response.json) for the query response envelope
 
 ## What's Inside
 
@@ -34,6 +35,11 @@
 | [`offline-service-offer.json`](http/offline-service-offer.json) | travel_hospitality | web_redirect | CPA bid model |
 | [`financial-service-offer.json`](http/financial-service-offer.json) | financial_service | web_redirect | Regulatory attributes |
 | [`entertainment-offer.json`](http/entertainment-offer.json) | entertainment | app_deep_link | Deep link action type |
+| [`health-beauty-offer.json`](http/health-beauty-offer.json) | health_beauty | web_redirect | Common attributes example |
+| [`fashion-offer.json`](http/fashion-offer.json) | fashion | web_redirect | Common attributes example |
+| [`food-grocery-offer.json`](http/food-grocery-offer.json) | food_grocery | web_redirect | Common attributes example |
+| [`home-garden-offer.json`](http/home-garden-offer.json) | home_garden | web_redirect | Common attributes example |
+| [`automotive-offer.json`](http/automotive-offer.json) | automotive | web_redirect | Common attributes example |
 | [`offer-query-request.json`](http/offer-query-request.json) | -- | -- | Structured query with intent + context |
 | [`offer-response.json`](http/offer-response.json) | -- | -- | Response envelope with trace_id |
 
@@ -41,6 +47,7 @@
 
 The current repository focuses on **canonical HTTP payload examples**.
 
+- These examples align with the current canonical 11-category public surface defined in the protocol taxonomy document.
 - SDK-specific walkthroughs live with the published SDK packages and docs.
 - More end-to-end agent workflow examples are planned as future additions to this repo.
 
@@ -75,6 +82,7 @@ npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
 | Repository | Purpose |
 |------------|---------|
 | [`agentoffernetwork/protocol`](https://github.com/agentoffernetwork/protocol) | Human-readable specification |
+| [`specs/category-taxonomy.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/category-taxonomy.md) | Current canonical category registry and boundary rules |
 | [`agentoffernetwork/schema`](https://github.com/agentoffernetwork/schema) | JSON Schema and TypeScript types |
 | [`agentoffernetwork/rfcs`](https://github.com/agentoffernetwork/rfcs) | Protocol change proposals |
 
@@ -87,7 +95,7 @@ npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
 ## Contributing
 
 - **New examples** for existing categories -- open a PR
-- **Examples for new categories** -- wait for the category to be added via [RFC](https://github.com/agentoffernetwork/rfcs)
+- **Examples for additional future categories** -- wait for the category to be added via [RFC](https://github.com/agentoffernetwork/rfcs)
 - **Bug fixes** in existing examples -- open a PR
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.

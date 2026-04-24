@@ -1,0 +1,34 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e148",
+  "version": "1.0",
+  "offer_info": {
+    "title": "LumaNest Smart Floor Lamp",
+    "offer_type": "physical_product",
+    "category": {
+      "type": "home_garden",
+      "attributes": {
+        "sub_type": "smart_home",
+        "dimensions": "145 x 28 x 28 cm",
+        "assembly_required": true,
+        "energy_rating": "A+"
+      }
+    },
+    "description": "App-controlled ambient floor lamp with voice assistant support and energy-efficient LED lighting."
+  },
+  "entity": {
+    "id": "ent_lumanest",
+    "name": "LumaNest Home"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "See details",
+    "payload": {
+      "target": "https://www.lumanest.example/products/smart-floor-lamp"
+    }
+  },
+  "bid": {
+    "model": "cps",
+    "amount": "11.20",
+    "currency": "USD"
+  }
+}

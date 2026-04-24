@@ -1,0 +1,34 @@
+{
+  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e149",
+  "version": "1.0",
+  "offer_info": {
+    "title": "VoltFast Home EV Charger",
+    "offer_type": "physical_product",
+    "category": {
+      "type": "automotive",
+      "attributes": {
+        "sub_type": "ev_charging",
+        "vehicle_type": "ev",
+        "fuel_type": "electric",
+        "warranty_years": 3
+      }
+    },
+    "description": "Level 2 home EV charger with smart scheduling, app monitoring, and weather-resistant enclosure."
+  },
+  "entity": {
+    "id": "ent_voltfast",
+    "name": "VoltFast Mobility"
+  },
+  "action": {
+    "type": "web_redirect",
+    "name": "Buy charger",
+    "payload": {
+      "target": "https://www.voltfast.example/products/home-ev-charger"
+    }
+  },
+  "bid": {
+    "model": "cps",
+    "amount": "24.00",
+    "currency": "USD"
+  }
+}
