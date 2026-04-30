@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e144",
   "version": "1.0",
   "offer_info": {
     "title": "Arcadia Online — Tidelands Expansion",
@@ -8,18 +7,31 @@
       "type": "entertainment",
       "attributes": {
         "sub_type": "game",
-        "platform": ["pc", "mobile", "console"],
+        "platform": [
+          "pc",
+          "mobile",
+          "console"
+        ],
         "genre": "open_world_rpg",
         "age_rating": "ESRB T (Teen)",
         "multiplayer": true,
         "developer": "SkyForge Studios",
         "in_app_purchases": true,
-        "supported_devices": ["iOS", "Android", "Windows", "PlayStation 5"],
-        "languages": ["en", "zh", "ja", "ko"]
+        "supported_devices": [
+          "iOS",
+          "Android",
+          "Windows",
+          "PlayStation 5"
+        ],
+        "languages": [
+          "en",
+          "zh",
+          "ja",
+          "ko"
+        ]
       }
     },
     "description": "Free-to-play open-world action RPG with stylized graphics. Explore the new Tidelands region with underwater exploration, new characters, and story quests.",
-    "source_offer_id": "adx_inventory_arcadia_tidelands",
     "start_at": "2026-01-01T00:00:00Z",
     "expire_at": "2026-12-31T23:59:59Z",
     "status": "active",
@@ -42,7 +54,9 @@
   "conversion_rule": {
     "click_window_hours": 168,
     "attribution_model": "last_click",
-    "accepted_types": ["install"],
+    "accepted_types": [
+      "install"
+    ],
     "dedup_strategy": "first"
   },
   "entity": {
@@ -64,15 +78,28 @@
   "targeting": [
     {
       "geo": {
-        "include": ["US", "JP", "KR", "GB", "CA", "AU", "SG"]
+        "include": [
+          "US",
+          "JP",
+          "KR",
+          "GB",
+          "CA",
+          "AU",
+          "SG"
+        ]
       },
       "language": "en",
-      "device_type": ["mobile", "desktop"]
+      "device_type": [
+        "mobile",
+        "desktop"
+      ]
     }
   ],
   "bid": {
     "model": "cpi",
     "amount": "3.50",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e144",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e144"
 }

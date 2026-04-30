@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e142",
   "version": "1.0",
   "offer_info": {
     "title": "The Manhattan Grand — Deluxe King Room",
@@ -27,7 +26,6 @@
       }
     },
     "description": "Luxury 5-star hotel in Midtown Manhattan with rooftop pool, full-service spa, and complimentary breakfast. Walking distance to Central Park and Times Square.",
-    "source_offer_id": "adx_inventory_manhattan_grand_deluxe",
     "start_at": "2026-04-01T00:00:00Z",
     "expire_at": "2026-10-31T23:59:59Z",
     "status": "active",
@@ -45,7 +43,9 @@
   "conversion_rule": {
     "click_window_hours": 168,
     "attribution_model": "last_click",
-    "accepted_types": ["sale"],
+    "accepted_types": [
+      "sale"
+    ],
     "dedup_strategy": "first"
   },
   "entity": {
@@ -66,15 +66,25 @@
   "targeting": [
     {
       "geo": {
-        "include": ["US", "GB", "CA"]
+        "include": [
+          "US",
+          "GB",
+          "CA"
+        ]
       },
       "language": "en",
-      "device_type": ["mobile", "desktop", "tablet"]
+      "device_type": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ]
     }
   ],
   "bid": {
     "model": "cpa",
     "amount": "42.00",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e142",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e142"
 }

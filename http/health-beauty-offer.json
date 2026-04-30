@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e145",
   "version": "1.0",
   "offer_info": {
     "title": "Lumera Cica Repair Serum",
@@ -8,7 +7,11 @@
       "type": "health_beauty",
       "attributes": {
         "sub_type": "skincare",
-        "ingredients_highlight": ["centella asiatica", "niacinamide", "ceramides"],
+        "ingredients_highlight": [
+          "centella asiatica",
+          "niacinamide",
+          "ceramides"
+        ],
         "skin_type": "combination",
         "organic": true
       }
@@ -30,5 +33,7 @@
     "model": "cps",
     "amount": "6.50",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e145",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e145"
 }

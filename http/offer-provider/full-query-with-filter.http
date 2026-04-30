@@ -68,7 +68,8 @@ Content-Type: application/json
   "trace_id": "0195ef98-90af-7e1f-b57d-1130cf0c57f2",
   "offers": [
     {
-      "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e142",
+      "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e142",
+      "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e142",
       "version": "1.0",
       "offer_info": {
         "title": "The Manhattan Grand — Deluxe King Room",

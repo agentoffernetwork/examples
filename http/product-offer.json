@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13e",
   "version": "1.0",
   "offer_info": {
     "title": "Aurex Nova Pro Wireless Noise Cancelling Earbuds",
@@ -19,11 +18,13 @@
           "water_resistance": "IPX4"
         },
         "warranty_months": 24,
-        "connectivity": ["Bluetooth 5.4", "USB-C"]
+        "connectivity": [
+          "Bluetooth 5.4",
+          "USB-C"
+        ]
       }
     },
     "description": "Premium truly wireless noise cancelling earbuds with high-resolution audio quality, 30-hour battery life, and adaptive sound control.",
-    "source_offer_id": "adx_inventory_aurex_nova_pro",
     "start_at": "2026-01-01T00:00:00Z",
     "expire_at": "2026-12-31T23:59:59Z",
     "status": "active",
@@ -46,7 +47,9 @@
   "conversion_rule": {
     "click_window_hours": 720,
     "attribution_model": "last_click",
-    "accepted_types": ["sale"],
+    "accepted_types": [
+      "sale"
+    ],
     "dedup_strategy": "first"
   },
   "entity": {
@@ -67,15 +70,24 @@
   "targeting": [
     {
       "geo": {
-        "include": ["US", "CA"]
+        "include": [
+          "US",
+          "CA"
+        ]
       },
       "language": "en",
-      "device_type": ["mobile", "desktop", "tablet"]
+      "device_type": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ]
     }
   ],
   "bid": {
     "model": "cps",
     "amount": "39.90",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13e",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e13e"
 }

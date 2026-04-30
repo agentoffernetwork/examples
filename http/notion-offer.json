@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
   "version": "1.0",
   "offer_info": {
     "title": "TeamFlow Pro Plan",
@@ -9,7 +8,11 @@
       "attributes": {
         "sub_type": "project_management",
         "plan_type": "paid",
-        "platform": ["web", "desktop", "mobile"]
+        "platform": [
+          "web",
+          "desktop",
+          "mobile"
+        ]
       }
     },
     "description": "Collaborative workspace for docs, wikis, and project planning. Per member per month billing."
@@ -30,5 +33,7 @@
     "model": "cps",
     "amount": "3.00",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e13f"
 }

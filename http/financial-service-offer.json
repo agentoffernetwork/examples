@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e143",
   "version": "1.0",
   "offer_info": {
     "title": "Atlas Rewards Credit Card",
@@ -18,7 +17,6 @@
       }
     },
     "description": "Premium travel rewards credit card with 75,000 bonus points after spending $4,000 in the first 3 months. No foreign transaction fees, trip cancellation insurance, and primary car rental coverage.",
-    "source_offer_id": "adx_inventory_atlas_rewards",
     "start_at": "2026-01-01T00:00:00Z",
     "expire_at": "2026-12-31T23:59:59Z",
     "status": "active",
@@ -36,7 +34,9 @@
   "conversion_rule": {
     "click_window_hours": 720,
     "attribution_model": "last_click",
-    "accepted_types": ["lead"],
+    "accepted_types": [
+      "lead"
+    ],
     "dedup_strategy": "first"
   },
   "entity": {
@@ -57,15 +57,23 @@
   "targeting": [
     {
       "geo": {
-        "include": ["US"]
+        "include": [
+          "US"
+        ]
       },
       "language": "en",
-      "device_type": ["mobile", "desktop", "tablet"]
+      "device_type": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ]
     }
   ],
   "bid": {
     "model": "cpa",
     "amount": "25.00",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e143",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e143"
 }

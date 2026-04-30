@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e149",
   "version": "1.0",
   "offer_info": {
     "title": "VoltFast Home EV Charger",
@@ -30,5 +29,7 @@
     "model": "cps",
     "amount": "24.00",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e149",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e149"
 }

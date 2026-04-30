@@ -53,7 +53,8 @@ Content-Type: application/json
 {
   "offers": [
     {
-      "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
+      "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
+      "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e13f",
       "version": "1.0",
       "offer_info": {
         "title": "TeamFlow Pro Plan",

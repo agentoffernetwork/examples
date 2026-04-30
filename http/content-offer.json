@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e141",
   "version": "1.0",
   "offer_info": {
     "title": "Mastering AI Agent Workflows Course",
@@ -18,7 +17,6 @@
       }
     },
     "description": "Self-paced online video course covering AI agent workflow design, orchestration, and production deployment for developers and automation engineers.",
-    "source_offer_id": "adx_inventory_ai_course_101",
     "start_at": "2026-01-01T00:00:00Z",
     "expire_at": "2026-09-30T23:59:59Z",
     "status": "active",
@@ -41,7 +39,9 @@
   "conversion_rule": {
     "click_window_hours": 72,
     "attribution_model": "last_click",
-    "accepted_types": ["sale"],
+    "accepted_types": [
+      "sale"
+    ],
     "dedup_strategy": "first"
   },
   "entity": {
@@ -62,15 +62,27 @@
   "targeting": [
     {
       "geo": {
-        "include": ["US", "AU", "SG", "GB", "CA"]
+        "include": [
+          "US",
+          "AU",
+          "SG",
+          "GB",
+          "CA"
+        ]
       },
       "language": "en",
-      "device_type": ["mobile", "desktop", "tablet"]
+      "device_type": [
+        "mobile",
+        "desktop",
+        "tablet"
+      ]
     }
   ],
   "bid": {
     "model": "cpa",
     "amount": "20.00",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e141",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e141"
 }

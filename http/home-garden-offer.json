@@ -1,5 +1,4 @@
 {
-  "uuid": "0195ef94-f17d-7a4f-b6e0-2c52bb49e148",
   "version": "1.0",
   "offer_info": {
     "title": "LumaNest Smart Floor Lamp",
@@ -30,5 +29,7 @@
     "model": "cps",
     "amount": "11.20",
     "currency": "USD"
-  }
+  },
+  "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e148",
+  "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e148"
 }
