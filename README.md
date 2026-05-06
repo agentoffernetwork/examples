@@ -41,7 +41,7 @@
 | [`home-garden-offer.json`](http/home-garden-offer.json) | home_garden | web_redirect | Common attributes example |
 | [`automotive-offer.json`](http/automotive-offer.json) | automotive | web_redirect | Common attributes example |
 | [`offer-query-request.json`](http/offer-query-request.json) | -- | -- | Structured query with intent + context |
-| [`offer-response.json`](http/offer-response.json) | -- | -- | Response envelope with trace_id |
+| [`offer-response.json`](http/offer-response.json) | -- | -- | Response envelope with request_id |
 
 ### Additional Example Sets
 

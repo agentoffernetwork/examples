@@ -1,7 +1,9 @@
 {
-  "trace_id": "0195ef98-90af-7e1f-b57d-1130cf0c57f2",
+  "request_id": "0195ef98-90af-7e1f-b57d-1130cf0c57f2",
   "offers": [
     {
+      "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
+      "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e13f",
       "version": "1.0",
       "offer_info": {
         "title": "TeamFlow Pro Plan",
@@ -17,29 +19,28 @@
               "mobile"
             ],
             "seats_included": 10
-          },
-          "commercial": {
-            "price": {
-              "amount": "10.00",
-              "currency": "USD"
-            },
-            "availability": "available"
           }
         },
-        "description": "Collaborative workspace for docs, wikis, and project planning."
+        "description": "Collaborative workspace for docs, wikis, and project planning.",
+        "commercial": {
+          "price": {
+            "amount": "10.00",
+            "currency": "USD"
+          }
+        }
       },
       "material": [
         {
-          "image_url": "https://teamflow.example/pro_plan_300x250.jpg",
+          "url": "https://teamflow.example/pro_plan_300x250.jpg",
           "tag": "banner",
           "format": "image",
-          "size": "300x250"
+          "dimensions": "300x250"
         }
       ],
       "entity": {
         "id": "ent_teamflow",
         "name": "TeamFlow",
-        "type": "service_provider",
+        "type": "business",
         "description": "Productivity software provider.",
         "website": "https://www.teamflow.example"
       },
@@ -61,15 +62,9 @@
       },
       "bid": {
         "model": "cps",
-        "rate": "0.20",
-        "currency": "USD",
-        "payout_delay_days": 7,
-        "validation_window_days": 3
-      },
-      "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
-      "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e13f"
+        "amount": "0.20",
+        "currency": "USD"
+      }
     }
-  ],
-  "has_more": false,
-  "total": 1
+  ]
 }
