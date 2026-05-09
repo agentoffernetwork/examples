@@ -59,3 +59,25 @@ jobs:
             fi
           done
           exit $failed
+
+      - name: Validate Query API request example against schema
+        run: |
+          ajv validate \
+            -s _schema/json-schema/offer-query-schema-v0.1.json \
+            -d http/offer-query-request.json \
+            --spec=draft2020 \
+            -c ajv-formats
+
+      - name: Validate OfferProvider request examples against schema
+        run: |
+          schema="_schema/json-schema/offer-provider-request-v0.1.json"
+          failed=0
+          for f in http/offer-provider/*query*.json; do
+            if ajv validate -s "$schema" -d "$f" --spec=draft2020 -c ajv-formats 2>/dev/null; then
+              echo "PASS: $f"
+            else
+              echo "FAIL: $f"
+              failed=1
+            fi
+          done
+          exit $failed
