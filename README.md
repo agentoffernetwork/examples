@@ -15,13 +15,26 @@
 
 ---
 
-## Quick Start
+## Start Here
 
-1. Start with the canonical [Category Taxonomy](https://github.com/agentoffernetwork/protocol/blob/main/specs/category-taxonomy.md) to understand the current public category surface
-2. Start with [`offer-query-request.json`](http/offer-query-request.json) to understand how agents search for offers
-3. Look at [`notion-offer.json`](http/notion-offer.json) for a minimal offer (REQUIRED + RECOMMENDED fields only)
-4. Compare with [`product-offer.json`](http/product-offer.json) for a full offer with all OPTIONAL fields
-5. See [`offer-response.json`](http/offer-response.json) for the query response envelope
+1. Start with [`offer-query-request.json`](http/offer-query-request.json) to understand how agents search for offers.
+2. Read [`offer-response.json`](http/offer-response.json) to see the canonical `request_id` + `offers[]` response envelope.
+3. Inspect [`notion-offer.json`](http/notion-offer.json) for a compact software/SaaS offer.
+4. Compare [`product-offer.json`](http/product-offer.json) for a fuller offer with optional fields.
+5. Use the [Schema](https://github.com/agentoffernetwork/schema) repository to validate any adapted payload.
+
+All examples use placeholder domains and public-safe sample values. Do not place real bearer tokens, partner secrets, or private customer data in example files.
+
+## Examples by Task
+
+| Task | Start with | Related spec | Validate with |
+|------|------------|--------------|---------------|
+| Build the first Query API request | [`http/offer-query-request.json`](http/offer-query-request.json) | [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md) | `offer-query-schema-v0.1.json` |
+| Understand the Query API response | [`http/offer-response.json`](http/offer-response.json) | [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md) | `offer-schema-v0.1.json` for each `offers[]` item |
+| Inspect a minimal offer | [`http/notion-offer.json`](http/notion-offer.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md) | `offer-schema-v0.1.json` |
+| Inspect a full product-style offer | [`http/product-offer.json`](http/product-offer.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md) | `offer-schema-v0.1.json` |
+| Explore category-specific offers | Category files under [`http/`](http) | [`category-taxonomy.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/category-taxonomy.md) | `offer-schema-v0.1.json` |
+| Inspect postback payloads | [`http/postback/`](http/postback) | [`postback.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/postback.md) | Postback schemas in the schema repo |
 
 ## What's Inside
 
@@ -66,16 +79,36 @@ These examples cover three protocol surfaces:
 
 ## Validating Examples
 
-You can validate any offer example against the official JSON Schema:
+### Validate a Query API request body
 
 ```bash
-# Validate an offer with temporary tooling (no local install required)
+npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
+  ajv validate \
+  -s ../schema/json-schema/offer-query-schema-v0.1.json \
+  -d your-query-request.json \
+  --spec=draft2020
+```
+
+Use the query example as a starting point, then validate the exact request body your integration will send.
+
+### Validate an offer example
+
+```bash
 npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
   ajv validate \
   -s ../schema/json-schema/offer-schema-v0.1.json \
   -d http/notion-offer.json \
   --spec=draft2020
 ```
+
+## Safe Placeholders
+
+| Value type | Use in examples | Do not use |
+|------------|-----------------|------------|
+| API token | `YOUR_API_KEY` | Real bearer token |
+| URL | `https://example.com/...` or product-specific `.example` domains | Private partner URL |
+| User identity | `user_pseudo_id`, sample session IDs | Raw email, phone, or customer ID |
+| Money | Decimal strings such as `"10.00"` | Locale-formatted strings such as `"$10"` |
 
 ## Related Repositories
 
