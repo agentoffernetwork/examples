@@ -25,6 +25,18 @@
 
 All examples use placeholder domains and public-safe sample values. Do not place real bearer tokens, partner secrets, or private customer data in example files.
 
+## Choose the Right Surface
+
+AgentOffer has two directions that are easy to mix up:
+
+| Direction | Who sends the request? | Use these examples | Related docs |
+|-----------|------------------------|--------------------|--------------|
+| Agent-facing Query API | Your agent, app, SDK, or backend calls AON | [`http/offer-query-request.json`](http/offer-query-request.json), [`http/offer-response.json`](http/offer-response.json), per-category offer files | [Query API](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md), [API Reference](https://docs.agentoffernetwork.com/api/offer-query) |
+| Partner-facing OfferProvider API | AON calls a Partner-hosted `offer_fetch_url` | [`http/offer-provider/`](http/offer-provider) | [OfferProvider API](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-provider-api.md), [Partner Integration Guide](https://docs.agentoffernetwork.com/guides/partner-integration) |
+| Postback callbacks | AON and Partners report attribution events | [`http/postback/`](http/postback) | [Postback](https://github.com/agentoffernetwork/protocol/blob/main/specs/postback.md) |
+
+If you are building an AI product, start with the Agent-facing Query API. If you are supplying inventory to AON, start with the Partner-facing OfferProvider API.
+
 ## Examples by Task
 
 | Task | Start with | Related spec | Validate with |
@@ -35,6 +47,7 @@ All examples use placeholder domains and public-safe sample values. Do not place
 | Inspect a full product-style offer | [`http/product-offer.json`](http/product-offer.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md) | `offer-schema-v0.1.json` |
 | Explore category-specific offers | Category files under [`http/`](http) | [`category-taxonomy.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/category-taxonomy.md) | `offer-schema-v0.1.json` |
 | Inspect postback payloads | [`http/postback/`](http/postback) | [`postback.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/postback.md) | Postback schemas in the schema repo |
+| Implement partner offer fetch | [`http/offer-provider/basic-query.json`](http/offer-provider/basic-query.json) | [`offer-provider-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-provider-api.md) | `offer-provider-request-v0.1.json`, `offer-provider-response-v0.1.json` |
 
 ## What's Inside
 
@@ -44,7 +57,7 @@ All examples use placeholder domains and public-safe sample values. Do not place
 |------|----------|--------|-------|
 | [`notion-offer.json`](http/notion-offer.json) | software_saas | web_redirect | **Minimal** -- REQUIRED + RECOMMENDED only |
 | [`product-offer.json`](http/product-offer.json) | electronics | web_redirect | Full offer with all OPTIONAL fields |
-| [`content-offer.json`](http/content-offer.json) | education | web_redirect | Includes `requires_auth: true` |
+| [`content-offer.json`](http/content-offer.json) | education | web_redirect | Online course content offer |
 | [`offline-service-offer.json`](http/offline-service-offer.json) | travel_hospitality | web_redirect | CPA bid model |
 | [`financial-service-offer.json`](http/financial-service-offer.json) | financial_service | web_redirect | Regulatory attributes |
 | [`entertainment-offer.json`](http/entertainment-offer.json) | entertainment | app_deep_link | Deep link action type |
@@ -58,10 +71,10 @@ All examples use placeholder domains and public-safe sample values. Do not place
 
 ### Additional Example Sets
 
-The current repository focuses on **canonical HTTP payload examples**.
+The current repository focuses on **canonical HTTP payload examples** for the current protocol surfaces.
 
 - These examples align with the current canonical 11-category public surface defined in the protocol taxonomy document.
-- SDK-specific walkthroughs live with the published SDK packages and docs.
+- SDK-specific walkthroughs live with the published SDK packages and [AON Docs](https://docs.agentoffernetwork.com/sdk).
 - More end-to-end agent workflow examples are planned as future additions to this repo.
 
 This keeps the v0.1 examples surface honest: what is here today is ready to inspect and validate;
@@ -76,6 +89,8 @@ These examples cover three protocol surfaces:
 | **Query Request** | `offer-query-request.json` | Structured POST body with context, intent, and pagination |
 | **Offer Object** | Per-category JSON files | Canonical offer unit with RFC 2119 field levels |
 | **Query Response** | `offer-response.json` | Envelope wrapping returned offers with query metadata |
+| **OfferProvider** | `offer-provider/` | Partner-hosted offer fetch request and response examples |
+| **Postback** | `postback/` | Attribution callback examples |
 
 ## Validating Examples
 
