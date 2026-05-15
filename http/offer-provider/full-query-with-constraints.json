@@ -33,15 +33,8 @@
       }
     ]
   },
-  "filter": {
-    "category_types": ["travel_hospitality"],
-    "bid_models": ["cps", "cpa"],
-    "status": ["active"],
-    "availability": ["available", "limited"],
-    "currency": "USD",
-    "max_price_amount": "500.00",
-    "country": "US",
-    "tags": ["luxury", "manhattan"]
+  "constraints": {
+    "category_types": ["travel_hospitality"]
   },
   "pagination": {
     "limit": 10,

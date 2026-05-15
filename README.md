@@ -37,6 +37,11 @@ AgentOffer has two directions that are easy to mix up:
 
 If you are building an AI product, start with the Agent-facing Query API. If you are supplying inventory to AON, start with the Partner-facing OfferProvider API.
 
+Query API and OfferProvider examples use `constraints.category_types` for
+deterministic constraints. They intentionally do not include lifecycle, bid,
+currency, price, brand, or country request constraints; AON returns active
+eligible offers by default.
+
 ## Examples by Task
 
 | Task | Start with | Related spec | Validate with |
