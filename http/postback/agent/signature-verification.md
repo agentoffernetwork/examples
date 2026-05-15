@@ -16,7 +16,7 @@
 | Secret | `aon-postback-secret-demo-rotate` |
 | HTTP method | `POST` |
 | HTTP path | `/webhook/aon/postback` |
-| Canonical body (exact bytes) | `{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}` |
+| Canonical body (exact bytes) | `{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}` |
 
 ## Signing String Construction
 
@@ -46,7 +46,7 @@ or re-sort keys before hashing.
 | `X-AON-Key` | `aon-agent-key-demo` |
 | `X-AON-Timestamp` | `1776450600` |
 | `X-AON-Nonce` | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
-| `X-AON-Signature` | `26d7befac5f006eec654903de2769c82c651c518ee0eab13ac2adcb78ee7e50b` |
+| `X-AON-Signature` | `64422739a3f408490b65c932efcd66431069b64ace4b6e65312951b13c9b051c` |
 
 Agent developer MUST verify the signature, confirm the timestamp is within
 the +/-5-minute window, and process the conversion event.
@@ -76,7 +76,7 @@ mandatory +/-5-minute window:
 |-------:|:------|
 | `X-AON-Timestamp` | `1776100000` |
 | `X-AON-Nonce` | `b2c3d4e5-f6a7-8901-bcde-f12345678901` |
-| `X-AON-Signature` | `448f95869e1eff5d564ae68442d3ffb64e2927d86373e155c23d695e3e992127` |
+| `X-AON-Signature` | `1cb84e2268fc300b0406619a5815a757b52e10604da1fd3eb12a23309ccf8ce8` |
 
 Agent developer MUST reject before even attempting signature verification
 once the timestamp falls outside the allowed skew.
@@ -87,7 +87,7 @@ once the timestamp falls outside the allowed skew.
 node -e '
 const c = require("crypto");
 const secret = "aon-postback-secret-demo-rotate";
-const body = `{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}`;
+const body = `{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}`;
 function sign(ts, nonce) {
   const s = `POST\n/webhook/aon/postback\n${body}\n${ts}\n${nonce}`;
   return c.createHmac("sha256", secret).update(s, "utf8").digest("hex");
@@ -101,10 +101,10 @@ The same computation in pure shell, when `openssl` is available:
 
 ```bash
 printf 'POST\n/webhook/aon/postback\n%s\n%s\n%s' \
-  '{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}' \
+  '{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}' \
   1776450600 \
   a1b2c3d4-e5f6-7890-abcd-ef1234567890 \
   | openssl dgst -sha256 -hmac "aon-postback-secret-demo-rotate" -hex
 ```
 
-Both commands yield `26d7befa...e7e50b` for Case 1.
+Both commands yield `64422739...9b051c` for Case 1.

@@ -16,7 +16,7 @@
 | Secret | `partner-postback-secret-demo` |
 | HTTP method | `POST` |
 | HTTP path | `/v1/postback` |
-| Canonical body (exact bytes) | `{"event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-21T03:10:00Z","conversion_type":"sale","amount":120,"bid":24,"currency":"USD","sub_id_1":"homepage_widget","coupon_code":"SPRING2026"}` |
+| Canonical body (exact bytes) | `{"event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-21T03:10:00Z","conversion_type":"sale","amount":120,"bid":24,"currency":"USD","sub_id_1":"homepage_widget","coupon_code":"SPRING2026"}` |
 
 ## Signing String Construction
 
@@ -46,7 +46,7 @@ re-sort keys after computing the signature.
 | `X-AON-Key` | `partner-appkey-demo` |
 | `X-AON-Timestamp` | `1776450600` |
 | `X-AON-Nonce` | `c3d4e5f6-a7b8-9012-cdef-123456789012` |
-| `X-AON-Signature` | `5d6f95e2bf4a2a78f92497c6ec14bf45b50749ebe8d7bbe30e858c28765aded5` |
+| `X-AON-Signature` | `7c7dd25ae5cec5c9c5bc35516c0c6a1758f51eed536db61bd7580a4b5b41c98b` |
 
 AON MUST accept this request when the timestamp is within +/-5 minutes of
 server time and the nonce has not been seen in the last 5 minutes.
@@ -78,7 +78,7 @@ mandatory +/-5-minute window:
 |-------:|:------|
 | `X-AON-Timestamp` | `1776100000` |
 | `X-AON-Nonce` | `d4e5f6a7-b8c9-0123-defa-234567890123` |
-| `X-AON-Signature` | `2cc25a4b736a8c4c9bf6d0e2e022f7785d45c19101495ab5aedc83253ff9ef11` |
+| `X-AON-Signature` | `31109fdb398afc8809bb575ef013cd3650c81c0078d4936be15614e659db7418` |
 
 AON MUST reject before even attempting signature verification once the
 timestamp falls outside the allowed skew. Recommended error body:
@@ -97,7 +97,7 @@ signature:
 |-------:|:------|
 | `X-AON-Timestamp` | `1776450800` |
 | `X-AON-Nonce` | `c3d4e5f6-a7b8-9012-cdef-123456789012` |
-| `X-AON-Signature` | `36604e822875ba0ba53d60e3cf6d5b6e3e271dd4361722babd3ec469edf2cc15` |
+| `X-AON-Signature` | `fffc32b1582491df247dbd2ed98ca34bb1d3cd9bd58f13c0209229ff582c8508` |
 
 AON MUST reject the second request because the nonce has been used within
 the 5-minute replay window:
@@ -112,7 +112,7 @@ the 5-minute replay window:
 node -e '
 const c = require("crypto");
 const secret = "partner-postback-secret-demo";
-const body = `{"event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-21T03:10:00Z","conversion_type":"sale","amount":120,"bid":24,"currency":"USD","sub_id_1":"homepage_widget","coupon_code":"SPRING2026"}`;
+const body = `{"event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-21T03:10:00Z","conversion_type":"sale","amount":120,"bid":24,"currency":"USD","sub_id_1":"homepage_widget","coupon_code":"SPRING2026"}`;
 function sign(ts, nonce) {
   const s = `POST\n/v1/postback\n${body}\n${ts}\n${nonce}`;
   return c.createHmac("sha256", secret).update(s, "utf8").digest("hex");
@@ -127,10 +127,10 @@ The same computation in pure shell, when `openssl` is available:
 
 ```bash
 printf 'POST\n/v1/postback\n%s\n%s\n%s' \
-  '{"event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","event_type":"conversion","tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-21T03:10:00Z","conversion_type":"sale","amount":120,"bid":24,"currency":"USD","sub_id_1":"homepage_widget","coupon_code":"SPRING2026"}' \
+  '{"event_id":"evt_pb_NWS66E195DM66YEK30HJKSVVYN","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","conversion_id":"partner_conv_98765","timestamp":"2026-03-21T03:10:00Z","conversion_type":"sale","amount":120,"bid":24,"currency":"USD","sub_id_1":"homepage_widget","coupon_code":"SPRING2026"}' \
   1776450600 \
   c3d4e5f6-a7b8-9012-cdef-123456789012 \
   | openssl dgst -sha256 -hmac "partner-postback-secret-demo" -hex
 ```
 
-Both commands yield `5d6f95e2...5aded5` for Case 1.
+Both commands yield `7c7dd25a...1c98b` for Case 1.

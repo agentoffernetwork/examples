@@ -1,7 +1,7 @@
 {
   "event_id": "evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP",
   "event_type": "conversion",
-  "tracking_id": "trk_01_click_abc",
+  "aon_tracking_id": "trk_01_click_abc",
   "offer_id": "ao_01HX2B3C4D5E6F7G8H9J0KABCD",
   "agent_id": "agt_assistant_123",
   "conversion_type": "sale",
