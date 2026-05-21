@@ -16,7 +16,7 @@
       "interests": ["travel", "luxury", "hospitality"],
       "device_info": {
         "device_type": "mobile",
-        "os": "iOS",
+        "os": "ios",
         "os_version": "17.4"
       }
     }

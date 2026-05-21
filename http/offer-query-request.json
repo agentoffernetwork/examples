@@ -12,10 +12,11 @@
     "user_profile": {
       "user_pseudo_id": "user_789012",
       "language": "en",
+      "country": "US",
       "interests": ["travel", "luxury", "hospitality"],
       "device_info": {
         "device_type": "desktop",
-        "os": "macOS",
+        "os": "macos",
         "os_version": "14.4"
       }
     }

@@ -14,7 +14,7 @@
       "interests": ["productivity", "saas"],
       "device_info": {
         "device_type": "desktop",
-        "os": "macOS",
+        "os": "macos",
         "os_version": "14.4"
       }
     }
