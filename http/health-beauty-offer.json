@@ -4,17 +4,7 @@
     "title": "Lumera Cica Repair Serum",
     "offer_type": "physical_product",
     "category": {
-      "type": "health_beauty",
-      "attributes": {
-        "sub_type": "skincare",
-        "ingredients_highlight": [
-          "centella asiatica",
-          "niacinamide",
-          "ceramides"
-        ],
-        "skin_type": "combination",
-        "organic": true
-      }
+      "id": "beauty_personal_care.skin_care"
     },
     "description": "Barrier-repair serum designed for stressed and combination skin, with centella, niacinamide, and ceramides."
   },

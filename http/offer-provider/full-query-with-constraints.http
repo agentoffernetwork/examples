@@ -44,7 +44,7 @@ X-AON-Test: false
     ]
   },
   "constraints": {
-    "category_types": ["travel_hospitality"]
+    "category_ids": ["travel_tourism"]
   },
   "pagination": {
     "limit": 10,
@@ -68,12 +68,7 @@ Content-Type: application/json
         "title": "The Manhattan Grand — Deluxe King Room",
         "offer_type": "offline_service",
         "category": {
-          "type": "travel_hospitality",
-          "attributes": {
-            "property_type": "hotel",
-            "destination": { "city": "New York", "country": "US" },
-            "star_rating": 5
-          }
+          "id": "travel_tourism.accommodations.hotels_motels_resorts.hotels"
         },
         "description": "Luxury 5-star hotel in Midtown Manhattan with rooftop pool and full-service spa.",
         "commercial": {

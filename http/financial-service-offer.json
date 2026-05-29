@@ -4,17 +4,7 @@
     "title": "Atlas Rewards Credit Card",
     "offer_type": "online_service",
     "category": {
-      "type": "financial_service",
-      "attributes": {
-        "sub_type": "credit_card",
-        "provider_license": "FIN-EXAMPLE-20260101",
-        "annual_fee": "$95",
-        "apr_range": "21.49%–28.49% variable",
-        "rewards_type": "points",
-        "sign_up_bonus": "80,000 bonus points after spending $4,000 in the first 3 months",
-        "min_credit_score": 700,
-        "foreign_transaction_fee": "0%"
-      }
+      "id": "finance.credit_lending.credit_cards"
     },
     "description": "Premium travel rewards credit card with 75,000 bonus points after spending $4,000 in the first 3 months. No foreign transaction fees, trip cancellation insurance, and primary car rental coverage.",
     "start_at": "2026-01-01T00:00:00Z",

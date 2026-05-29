@@ -4,13 +4,7 @@
     "title": "Northline Everyday Overshirt",
     "offer_type": "physical_product",
     "category": {
-      "type": "fashion",
-      "attributes": {
-        "sub_type": "clothing",
-        "gender": "unisex",
-        "size_range": "XS-XXL",
-        "material": "organic cotton twill"
-      }
+      "id": "fashion_apparel.clothing"
     },
     "description": "A midweight overshirt built for everyday wear with a relaxed fit and organic cotton construction."
   },

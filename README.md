@@ -37,8 +37,8 @@ AgentOffer has two directions that are easy to mix up:
 
 If you are building an AI product, start with the Agent-facing Query API. If you are supplying inventory to AON, start with the Partner-facing OfferProvider API.
 
-Query API and OfferProvider examples use `constraints.category_types` for
-deterministic constraints. They intentionally do not include lifecycle, bid,
+Query API and OfferProvider examples use `constraints.category_ids` for
+deterministic taxonomy constraints. They intentionally do not include lifecycle, bid,
 currency, price, brand, or country request constraints; AON returns active
 eligible offers by default.
 
@@ -60,17 +60,19 @@ eligible offers by default.
 
 | File | Category | Action | Notes |
 |------|----------|--------|-------|
-| [`notion-offer.json`](http/notion-offer.json) | software_saas | web_redirect | **Minimal** -- REQUIRED + RECOMMENDED only |
-| [`product-offer.json`](http/product-offer.json) | electronics | web_redirect | Full offer with all OPTIONAL fields |
-| [`content-offer.json`](http/content-offer.json) | education | web_redirect | Online course content offer |
-| [`offline-service-offer.json`](http/offline-service-offer.json) | travel_hospitality | web_redirect | CPA bid model |
-| [`financial-service-offer.json`](http/financial-service-offer.json) | financial_service | web_redirect | Regulatory attributes |
-| [`entertainment-offer.json`](http/entertainment-offer.json) | entertainment | app_deep_link | Deep link action type |
-| [`health-beauty-offer.json`](http/health-beauty-offer.json) | health_beauty | web_redirect | Common attributes example |
-| [`fashion-offer.json`](http/fashion-offer.json) | fashion | web_redirect | Common attributes example |
-| [`food-grocery-offer.json`](http/food-grocery-offer.json) | food_grocery | web_redirect | Common attributes example |
-| [`home-garden-offer.json`](http/home-garden-offer.json) | home_garden | web_redirect | Common attributes example |
-| [`automotive-offer.json`](http/automotive-offer.json) | automotive | web_redirect | Common attributes example |
+| [`notion-offer.json`](http/notion-offer.json) | `computers_electronics.computers.software...` | web_redirect | **Minimal** -- REQUIRED + RECOMMENDED only |
+| [`product-offer.json`](http/product-offer.json) | `computers_electronics...` | web_redirect | Full offer with all OPTIONAL fields |
+| [`content-offer.json`](http/content-offer.json) | `jobs_education` | web_redirect | Online course content offer |
+| [`offline-service-offer.json`](http/offline-service-offer.json) | `travel_tourism...` | web_redirect | CPA bid model |
+| [`financial-service-offer.json`](http/financial-service-offer.json) | `finance...` | web_redirect | Regulatory attributes |
+| [`entertainment-offer.json`](http/entertainment-offer.json) | `hobbies_games_leisure...` | app_deep_link | Deep link action type |
+| [`adult-entertainment-offer.json`](http/adult-entertainment-offer.json) | `arts_entertainment.adult_entertainment` | web_redirect | Sensitive category example |
+| [`igaming-offer.json`](http/igaming-offer.json) | `hobbies_games_leisure.leisure_gambling.igaming` | web_redirect | Sensitive category + targeting example |
+| [`health-beauty-offer.json`](http/health-beauty-offer.json) | `beauty_personal_care...` | web_redirect | Category id example |
+| [`fashion-offer.json`](http/fashion-offer.json) | `fashion_apparel...` | web_redirect | Category id example |
+| [`food-grocery-offer.json`](http/food-grocery-offer.json) | `food_grocery...` | web_redirect | Category id example |
+| [`home-garden-offer.json`](http/home-garden-offer.json) | `home_garden...` | web_redirect | Category id example |
+| [`automotive-offer.json`](http/automotive-offer.json) | `automotive...` | web_redirect | Category id example |
 | [`offer-query-request.json`](http/offer-query-request.json) | -- | -- | Structured query with intent + context |
 | [`offer-response.json`](http/offer-response.json) | -- | -- | Response envelope with request_id |
 
@@ -78,7 +80,7 @@ eligible offers by default.
 
 The current repository focuses on **canonical HTTP payload examples** for the current protocol surfaces.
 
-- These examples align with the current canonical 11-category public surface defined in the protocol taxonomy document.
+- These examples align with AON Taxonomy v1 `category.id` values defined in the protocol taxonomy document.
 - SDK-specific walkthroughs live with the published SDK packages and [AON Docs](https://docs.agentoffernetwork.com/sdk).
 - More end-to-end agent workflow examples are planned as future additions to this repo.
 
@@ -147,8 +149,8 @@ npx --yes --package=ajv-cli@5 --package=ajv-formats@3 -- \
 
 ## Contributing
 
-- **New examples** for existing categories -- open a PR
-- **Examples for additional future categories** -- wait for the category to be added via [RFC](https://github.com/agentoffernetwork/rfcs)
+- **New examples** for existing taxonomy ids -- open a PR
+- **Examples for additional future categories** -- wait for the taxonomy id to be added via [RFC](https://github.com/agentoffernetwork/rfcs)
 - **Bug fixes** in existing examples -- open a PR
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.

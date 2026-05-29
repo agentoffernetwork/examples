@@ -4,16 +4,7 @@
     "title": "HarvestBox High-Protein Meal Kit",
     "offer_type": "physical_product",
     "category": {
-      "type": "food_grocery",
-      "attributes": {
-        "sub_type": "meal_kit",
-        "dietary_info": [
-          "high_protein",
-          "gluten_free"
-        ],
-        "shelf_life_days": 5,
-        "serving_size": "2 servings"
-      }
+      "id": "food_grocery.food"
     },
     "description": "Weekly high-protein meal kit with chef-designed recipes and pre-portioned ingredients."
   },

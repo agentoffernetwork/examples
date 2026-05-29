@@ -4,26 +4,7 @@
     "title": "The Manhattan Grand — Deluxe King Room",
     "offer_type": "offline_service",
     "category": {
-      "type": "travel_hospitality",
-      "attributes": {
-        "sub_type": "hotel",
-        "destination": {
-          "city": "New York",
-          "country": "US"
-        },
-        "star_rating": 5,
-        "amenities": [
-          "Rooftop pool",
-          "Spa & wellness center",
-          "24-hour concierge",
-          "Complimentary Wi-Fi",
-          "Fitness center"
-        ],
-        "room_type": "Deluxe King",
-        "breakfast_included": true,
-        "cancellation_policy": "Free cancellation up to 48 hours before check-in",
-        "max_guests": 2
-      }
+      "id": "travel_tourism.accommodations.hotels_motels_resorts.hotels"
     },
     "description": "Luxury 5-star hotel in Midtown Manhattan with rooftop pool, full-service spa, and complimentary breakfast. Walking distance to Central Park and Times Square.",
     "start_at": "2026-04-01T00:00:00Z",

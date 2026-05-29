@@ -37,3 +37,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Version: `v0.1`
 - Status: `Draft`
+
+## [Unreleased]
+
+### Added
+
+- Adult entertainment and iGaming examples for AON Taxonomy v1 sensitive
+  category coverage:
+  - `adult-entertainment-offer.json`
+  - `igaming-offer.json`
+
+### Changed
+
+- Migrated offer examples from legacy `category.type + attributes.sub_type` to
+  AON Taxonomy v1 `offer_info.category.id`.
+- Migrated Query and OfferProvider examples from `constraints.category_types`
+  to `constraints.category_ids`.

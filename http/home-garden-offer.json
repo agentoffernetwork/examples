@@ -4,13 +4,7 @@
     "title": "LumaNest Smart Floor Lamp",
     "offer_type": "physical_product",
     "category": {
-      "type": "home_garden",
-      "attributes": {
-        "sub_type": "smart_home",
-        "dimensions": "145 x 28 x 28 cm",
-        "assembly_required": true,
-        "energy_rating": "A+"
-      }
+      "id": "home_garden.home_appliances"
     },
     "description": "App-controlled ambient floor lamp with voice assistant support and energy-efficient LED lighting."
   },

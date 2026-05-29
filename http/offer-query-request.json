@@ -13,7 +13,11 @@
       "user_pseudo_id": "user_789012",
       "language": "en",
       "country": "US",
-      "interests": ["travel", "luxury", "hospitality"],
+      "interests": [
+        "travel",
+        "luxury",
+        "hospitality"
+      ],
       "device_info": {
         "device_type": "desktop",
         "os": "macos",
@@ -30,7 +34,9 @@
     ]
   },
   "constraints": {
-    "category_types": ["travel_hospitality"]
+    "category_ids": [
+      "travel_tourism"
+    ]
   },
   "pagination": {
     "limit": 5,

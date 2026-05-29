@@ -4,16 +4,7 @@
     "title": "TeamFlow Pro Plan",
     "offer_type": "online_service",
     "category": {
-      "type": "software_saas",
-      "attributes": {
-        "sub_type": "project_management",
-        "plan_type": "paid",
-        "platform": [
-          "web",
-          "desktop",
-          "mobile"
-        ]
-      }
+      "id": "computers_electronics.computers.software.business_productivity_software.business_management_software.project_management_software"
     },
     "description": "Collaborative workspace for docs, wikis, and project planning. Per member per month billing."
   },

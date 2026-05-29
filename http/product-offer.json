@@ -4,25 +4,7 @@
     "title": "Aurex Nova Pro Wireless Noise Cancelling Earbuds",
     "offer_type": "physical_product",
     "category": {
-      "type": "electronics",
-      "attributes": {
-        "sub_type": "audio",
-        "brand": "Aurex",
-        "model": "Nova Pro",
-        "condition": "new",
-        "specifications": {
-          "noise_cancellation": "Adaptive",
-          "battery_life": "Up to 30 hours total",
-          "bluetooth": "5.4",
-          "audio": "Hi-Res Audio Wireless",
-          "water_resistance": "IPX4"
-        },
-        "warranty_months": 24,
-        "connectivity": [
-          "Bluetooth 5.4",
-          "USB-C"
-        ]
-      }
+      "id": "computers_electronics.consumer_electronics.home_audio_video"
     },
     "description": "Premium truly wireless noise cancelling earbuds with high-resolution audio quality, 30-hour battery life, and adaptive sound control.",
     "start_at": "2026-01-01T00:00:00Z",

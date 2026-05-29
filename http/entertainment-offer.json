@@ -4,32 +4,7 @@
     "title": "Arcadia Online — Tidelands Expansion",
     "offer_type": "online_service",
     "category": {
-      "type": "entertainment",
-      "attributes": {
-        "sub_type": "game",
-        "platform": [
-          "pc",
-          "mobile",
-          "console"
-        ],
-        "genre": "open_world_rpg",
-        "age_rating": "ESRB T (Teen)",
-        "multiplayer": true,
-        "developer": "SkyForge Studios",
-        "in_app_purchases": true,
-        "supported_devices": [
-          "iOS",
-          "Android",
-          "Windows",
-          "PlayStation 5"
-        ],
-        "languages": [
-          "en",
-          "zh",
-          "ja",
-          "ko"
-        ]
-      }
+      "id": "hobbies_games_leisure.toys_games.games"
     },
     "description": "Free-to-play open-world action RPG with stylized graphics. Explore the new Tidelands region with underwater exploration, new characters, and story quests.",
     "start_at": "2026-01-01T00:00:00Z",

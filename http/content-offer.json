@@ -4,17 +4,7 @@
     "title": "Mastering AI Agent Workflows Course",
     "offer_type": "content",
     "category": {
-      "type": "education",
-      "attributes": {
-        "sub_type": "online_course",
-        "format": "online",
-        "subject": "AI Agent Workflows",
-        "level": "intermediate",
-        "duration": "12 hours",
-        "instructor": "SkillForge Academy",
-        "certification": true,
-        "language": "en"
-      }
+      "id": "jobs_education"
     },
     "description": "Self-paced online video course covering AI agent workflow design, orchestration, and production deployment for developers and automation engineers.",
     "start_at": "2026-01-01T00:00:00Z",

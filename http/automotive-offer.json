@@ -4,13 +4,7 @@
     "title": "VoltFast Home EV Charger",
     "offer_type": "physical_product",
     "category": {
-      "type": "automotive",
-      "attributes": {
-        "sub_type": "ev_charging",
-        "vehicle_type": "ev",
-        "fuel_type": "electric",
-        "warranty_years": 3
-      }
+      "id": "automotive.motor_vehicles.cars_trucks.hybrid_alternative_vehicles"
     },
     "description": "Level 2 home EV charger with smart scheduling, app monitoring, and weather-resistant enclosure."
   },
