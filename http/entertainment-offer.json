@@ -71,9 +71,10 @@
     }
   ],
   "bid": {
-    "model": "cpi",
+    "model": "cpa",
     "amount": "3.50",
-    "currency": "USD"
+    "currency": "USD",
+    "model_subtype": "Install"
   },
   "offer_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e144",
   "offer_instance_id": "019dd208-27d2-7673-b16f-2c52bb49e144"

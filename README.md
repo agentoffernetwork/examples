@@ -17,7 +17,7 @@
 
 ## Start Here
 
-1. Start with [`offer-query-request.json`](http/offer-query-request.json) to understand how agents search for offers.
+1. Start with [`offer-query-request.json`](http/offer-query-request.json) to understand how agents search for offers, including optional `location_ids` and `verified_age_over` viewer context.
 2. Read [`offer-response.json`](http/offer-response.json) to see the canonical `request_id` + `offers[]` response envelope.
 3. Inspect [`notion-offer.json`](http/notion-offer.json) for a compact software/SaaS offer.
 4. Compare [`product-offer.json`](http/product-offer.json) for a fuller offer with optional fields.
@@ -31,8 +31,8 @@ AgentOffer has two directions that are easy to mix up:
 
 | Direction | Who sends the request? | Use these examples | Related docs |
 |-----------|------------------------|--------------------|--------------|
-| Agent-facing Query API | Your agent, app, SDK, or backend calls AON | [`http/offer-query-request.json`](http/offer-query-request.json), [`http/offer-response.json`](http/offer-response.json), per-category offer files | [Query API](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md), [API Reference](https://docs.agentoffernetwork.com/api/offer-query) |
-| Partner-facing OfferProvider API | AON calls a Partner-hosted `offer_fetch_url` | [`http/offer-provider/`](http/offer-provider) | [OfferProvider API](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-provider-api.md), [Partner Integration Guide](https://docs.agentoffernetwork.com/guides/partner-integration) |
+| Agent-facing Query API | Your agent, app, SDK, or backend calls AON | [`http/offer-query-request.json`](http/offer-query-request.json), [`http/offer-response.json`](http/offer-response.json), per-category offer files | [Query API](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md), [API Reference](https://docs.aon.pro/api/offer-query) |
+| Partner-facing OfferProvider API | AON calls a Partner-hosted `offer_fetch_url` | [`http/offer-provider/`](http/offer-provider) | [OfferProvider API](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-provider-api.md), [Partner Integration Guide](https://docs.aon.pro/guides/partner-integration) |
 | Postback callbacks | AON and Partners report attribution events | [`http/postback/`](http/postback) | [Postback](https://github.com/agentoffernetwork/protocol/blob/main/specs/postback.md) |
 
 If you are building an AI product, start with the Agent-facing Query API. If you are supplying inventory to AON, start with the Partner-facing OfferProvider API.
@@ -42,12 +42,18 @@ deterministic taxonomy constraints. They intentionally do not include lifecycle,
 currency, price, brand, or country request constraints; AON returns active
 eligible offers by default.
 
+Location and age eligibility are modeled as viewer context, not caller-side
+search filters. Query examples may send `context.user_profile.location_ids` and
+`context.user_profile.verified_age_over`; offer examples may use structured
+`targeting[].geo.*[].location_id` entries and `targeting[].eligibility.min_age`.
+
 ## Examples by Task
 
 | Task | Start with | Related spec | Validate with |
 |------|------------|--------------|---------------|
 | Build the first Query API request | [`http/offer-query-request.json`](http/offer-query-request.json) | [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md) | `offer-query-schema-v0.1.json` |
 | Understand the Query API response | [`http/offer-response.json`](http/offer-response.json) | [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md) | `offer-schema-v0.1.json` for each `offers[]` item |
+| Inspect location and age eligibility | [`http/adult-entertainment-offer.json`](http/adult-entertainment-offer.json), [`http/financial-service-offer.json`](http/financial-service-offer.json), [`http/offer-query-request.json`](http/offer-query-request.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md#targeting-optional), [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md#device-os-location-and-age-context) | `offer-schema-v0.1.json`, `offer-query-schema-v0.1.json` |
 | Inspect a minimal offer | [`http/notion-offer.json`](http/notion-offer.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md) | `offer-schema-v0.1.json` |
 | Inspect a full product-style offer | [`http/product-offer.json`](http/product-offer.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md) | `offer-schema-v0.1.json` |
 | Explore category-specific offers | Category files under [`http/`](http) | [`category-taxonomy.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/category-taxonomy.md) | `offer-schema-v0.1.json` |
@@ -64,10 +70,11 @@ eligible offers by default.
 | [`product-offer.json`](http/product-offer.json) | `computers_electronics...` | web_redirect | Full offer with all OPTIONAL fields |
 | [`content-offer.json`](http/content-offer.json) | `jobs_education` | web_redirect | Online course content offer |
 | [`offline-service-offer.json`](http/offline-service-offer.json) | `travel_tourism...` | web_redirect | CPA bid model |
-| [`financial-service-offer.json`](http/financial-service-offer.json) | `finance...` | web_redirect | Regulatory attributes |
+| [`financial-service-offer.json`](http/financial-service-offer.json) | `finance...` | web_redirect | Regulatory attributes + registry-backed US location targeting |
 | [`entertainment-offer.json`](http/entertainment-offer.json) | `hobbies_games_leisure...` | app_deep_link | Deep link action type |
-| [`adult-entertainment-offer.json`](http/adult-entertainment-offer.json) | `arts_entertainment.adult_entertainment` | web_redirect | Sensitive category example |
-| [`igaming-offer.json`](http/igaming-offer.json) | `hobbies_games_leisure.leisure_gambling.igaming` | web_redirect | Sensitive category + targeting example |
+| [`adult-entertainment-offer.json`](http/adult-entertainment-offer.json) | `arts_entertainment.adult_entertainment` | web_redirect | Sensitive category + 18+ eligibility example |
+| [`igaming-offer.json`](http/igaming-offer.json) | `arts_entertainment.igaming` | web_redirect | Sensitive category + targeting example |
+| [`short-drama-offer.json`](http/short-drama-offer.json) | `arts_entertainment.short_drama` | web_redirect | Short Drama vertical example |
 | [`health-beauty-offer.json`](http/health-beauty-offer.json) | `beauty_personal_care...` | web_redirect | Category id example |
 | [`fashion-offer.json`](http/fashion-offer.json) | `fashion_apparel...` | web_redirect | Category id example |
 | [`food-grocery-offer.json`](http/food-grocery-offer.json) | `food_grocery...` | web_redirect | Category id example |
@@ -81,7 +88,7 @@ eligible offers by default.
 The current repository focuses on **canonical HTTP payload examples** for the current protocol surfaces.
 
 - These examples align with AON Taxonomy v1 `category.id` values defined in the protocol taxonomy document.
-- SDK-specific walkthroughs live with the published SDK packages and [AON Docs](https://docs.agentoffernetwork.com/sdk).
+- SDK-specific walkthroughs live with the published SDK packages and [AON Docs](https://docs.aon.pro/sdk).
 - More end-to-end agent workflow examples are planned as future additions to this repo.
 
 This keeps the v0.1 examples surface honest: what is here today is ready to inspect and validate;

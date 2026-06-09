@@ -53,3 +53,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   AON Taxonomy v1 `offer_info.category.id`.
 - Migrated Query and OfferProvider examples from `constraints.category_types`
   to `constraints.category_ids`.
+- Updated Query, adult entertainment, and financial service examples to use
+  AON Location Registry v1 `location_id` values and age threshold eligibility
+  fields.

@@ -12,8 +12,18 @@
     {
       "geo": {
         "include": [
-          "US"
+          {
+            "location_id": "2840"
+          }
+        ],
+        "exclude": [
+          {
+            "location_id": "21180"
+          }
         ]
+      },
+      "eligibility": {
+        "min_age": 18
       },
       "language": "en",
       "device_type": [

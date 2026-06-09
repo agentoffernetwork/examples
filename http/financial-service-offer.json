@@ -48,8 +48,16 @@
     {
       "geo": {
         "include": [
-          "US"
+          {
+            "location_id": "21137"
+          },
+          {
+            "location_id": "21167"
+          }
         ]
+      },
+      "eligibility": {
+        "min_age": 18
       },
       "language": "en",
       "device_type": [
