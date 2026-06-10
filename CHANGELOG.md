@@ -46,6 +46,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   category coverage:
   - `adult-entertainment-offer.json`
   - `igaming-offer.json`
+- `offer_info.tags` in the query response example to demonstrate
+  partner-supplied content matching hints.
 
 ### Changed
 

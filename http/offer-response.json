@@ -12,6 +12,11 @@
           "id": "computers_electronics.computers.software.business_productivity_software.business_management_software.project_management_software"
         },
         "description": "Collaborative workspace for docs, wikis, and project planning.",
+        "tags": [
+          "project-management",
+          "team-collaboration",
+          "free-trial"
+        ],
         "commercial": {
           "price": {
             "amount": "10.00",
