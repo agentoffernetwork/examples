@@ -11,6 +11,9 @@
         "category": {
           "id": "computers_electronics.computers.software.business_productivity_software.business_management_software.project_management_software"
         },
+        "secondary_category_ids": [
+          "finance.investing.crypto_and_digital_assets"
+        ],
         "description": "Collaborative workspace for docs, wikis, and project planning.",
         "tags": [
           "project-management",

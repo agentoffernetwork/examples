@@ -48,6 +48,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - `igaming-offer.json`
 - `offer_info.tags` in the query response example to demonstrate
   partner-supplied content matching hints.
+- Location Search API examples for text search, exact lookup, country-code
+  migration, and Query API `location_ids` chain construction.
+- Location resolve examples for ISO 3166-2 subdivision codes, Cloudflare
+  visitor location headers, and Google Cloud Load Balancing location headers.
 
 ### Changed
 

@@ -1,0 +1,14 @@
+{
+  "legacy_geo": {
+    "include": ["US", "SG"],
+    "exclude": ["US"]
+  },
+  "structured_geo": {
+    "include": [{ "location_id": "2840" }, { "location_id": "2702" }],
+    "exclude": [{ "location_id": "2840" }]
+  },
+  "notes": [
+    "Use countryCodeToLocationId for country-only legacy payloads.",
+    "New payloads should store structured location_id entries directly."
+  ]
+}

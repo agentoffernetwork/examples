@@ -54,6 +54,7 @@ search filters. Query examples may send `context.user_profile.location_ids` and
 | Build the first Query API request | [`http/offer-query-request.json`](http/offer-query-request.json) | [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md) | `offer-query-schema-v0.1.json` |
 | Understand the Query API response | [`http/offer-response.json`](http/offer-response.json) | [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md) | `offer-schema-v0.1.json` for each `offers[]` item |
 | Inspect location and age eligibility | [`http/adult-entertainment-offer.json`](http/adult-entertainment-offer.json), [`http/financial-service-offer.json`](http/financial-service-offer.json), [`http/offer-query-request.json`](http/offer-query-request.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md#targeting-optional), [`query-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/query-api.md#device-os-location-and-age-context) | `offer-schema-v0.1.json`, `offer-query-schema-v0.1.json` |
+| Resolve location ids and migrate country geo | [`http/location-search/`](http/location-search) | [`location-search-api.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/location-search-api.md) | `location-search-response-v0.1.json`, `helpers/location-helpers.mjs` |
 | Inspect a minimal offer | [`http/notion-offer.json`](http/notion-offer.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md) | `offer-schema-v0.1.json` |
 | Inspect a full product-style offer | [`http/product-offer.json`](http/product-offer.json) | [`offer-schema.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/offer-schema.md) | `offer-schema-v0.1.json` |
 | Explore category-specific offers | Category files under [`http/`](http) | [`category-taxonomy.md`](https://github.com/agentoffernetwork/protocol/blob/main/specs/category-taxonomy.md) | `offer-schema-v0.1.json` |
@@ -82,6 +83,7 @@ search filters. Query examples may send `context.user_profile.location_ids` and
 | [`automotive-offer.json`](http/automotive-offer.json) | `automotive...` | web_redirect | Category id example |
 | [`offer-query-request.json`](http/offer-query-request.json) | -- | -- | Structured query with intent + context |
 | [`offer-response.json`](http/offer-response.json) | -- | -- | Response envelope with request_id |
+| [`location-search/`](http/location-search) | -- | -- | Location Search API responses, ISO/edge-header resolve examples, country geo migration, and query location-chain examples |
 
 ### Additional Example Sets
 
@@ -103,6 +105,7 @@ These examples cover three protocol surfaces:
 | **Query Request** | `offer-query-request.json` | Structured POST body with context, intent, and pagination |
 | **Offer Object** | Per-category JSON files | Canonical offer unit with RFC 2119 field levels |
 | **Query Response** | `offer-response.json` | Envelope wrapping returned offers with query metadata |
+| **Location Search** | `location-search/` | Protocol examples for resolving registry ids before Query API targeting |
 | **OfferProvider** | `offer-provider/` | Partner-hosted offer fetch request and response examples |
 | **Postback** | `postback/` | Attribution callback examples |
 

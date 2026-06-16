@@ -2,6 +2,7 @@
   "request_id": "0195f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
   "timestamp": "2026-03-25T14:30:00Z",
   "test_mode": false,
+  "placement_id": "plc_A1b2C3d4E5f6G7h8",
   "context": {
     "platform": {
       "name": "ChatGPT",

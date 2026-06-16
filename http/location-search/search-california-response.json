@@ -1,0 +1,43 @@
+{
+  "code": "SUCCESS",
+  "message": "",
+  "data": {
+    "registry_version": "v1",
+    "source_file_date": "2026-05-28",
+    "locations": [
+      {
+        "location_id": "21137",
+        "name": "California",
+        "canonical_name": "California,United States",
+        "country_code": "US",
+        "level": "REGION",
+        "target_type": "State",
+        "parent_location_id": "2840",
+        "external_codes": {
+          "iso_3166_2": "US-CA",
+          "cldr_subdivision": "USCA",
+          "provider_short": "CA"
+        },
+        "path": [
+          { "location_id": "2840", "name": "United States", "level": "COUNTRY" },
+          { "location_id": "21137", "name": "California", "level": "REGION" }
+        ]
+      },
+      {
+        "location_id": "1018531",
+        "name": "California",
+        "canonical_name": "California,Maryland,United States",
+        "country_code": "US",
+        "level": "CITY",
+        "target_type": "City",
+        "parent_location_id": "21153",
+        "path": [
+          { "location_id": "2840", "name": "United States", "level": "COUNTRY" },
+          { "location_id": "21153", "name": "Maryland", "level": "REGION" },
+          { "location_id": "1018531", "name": "California", "level": "CITY" }
+        ]
+      }
+    ]
+  },
+  "extra": {}
+}
