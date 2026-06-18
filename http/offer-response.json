@@ -40,14 +40,25 @@
         "name": "TeamFlow",
         "type": "business",
         "description": "Productivity software provider.",
-        "website": "https://www.teamflow.example"
+        "website": "https://www.teamflow.example",
+        "logo": {
+          "url": "https://cdn.example.com/logos/teamflow.png",
+          "alt_text": "TeamFlow logo"
+        }
       },
       "action": {
         "type": "web_redirect",
         "name": "Start free trial",
+        "destination_types": [
+          "website"
+        ],
         "payload": {
           "target": "https://www.teamflow.example/signup"
         }
+      },
+      "extra": {
+        "metadata_source": "partner_config",
+        "metadata_confidence": "high"
       },
       "conversion_rule": {
         "click_window_hours": 720,
