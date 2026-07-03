@@ -49,6 +49,7 @@
       "action": {
         "type": "web_redirect",
         "name": "Start free trial",
+        "consumer_action": "start_trial",
         "destination_types": [
           "website"
         ],

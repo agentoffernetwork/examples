@@ -32,9 +32,10 @@
   },
   "action": {
     "type": "web_redirect",
-    "name": "Subscribe",
+    "name": "Watch now",
+    "consumer_action": "watch",
     "payload": {
-      "target": "https://shortdrama.example/subscribe"
+      "target": "https://shortdrama.example/watch"
     }
   },
   "bid": {

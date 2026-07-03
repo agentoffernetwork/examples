@@ -44,6 +44,7 @@
   "action": {
     "type": "web_redirect",
     "name": "Buy now",
+    "consumer_action": "purchase",
     "description": "Redirect to the official product purchase page with free 2-day shipping.",
     "payload": {
       "target": "https://shop.aurex.example/products/nova-pro"

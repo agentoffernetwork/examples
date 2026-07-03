@@ -42,12 +42,12 @@
     "website": "https://www.skyforge.example"
   },
   "action": {
-    "type": "app_deep_link",
-    "name": "Download free",
-    "description": "Open the app store listing or launch the game directly on mobile.",
+    "type": "web_redirect",
+    "name": "Play now",
+    "consumer_action": "play",
+    "description": "Open the playable campaign landing page and start the new Tidelands quest.",
     "payload": {
-      "target": "skyforge://arcadia/launch?campaign=aon_tidelands",
-      "platform": "ios"
+      "target": "https://play.skyforge.example/arcadia/tidelands"
     }
   },
   "targeting": [
