@@ -1,12 +1,12 @@
 {
   "version": "1.0",
   "offer_info": {
-    "title": "Atlas Rewards Credit Card",
+    "title": "Atlas Rewards Credit Card Bill Pay",
     "offer_type": "online_service",
     "category": {
       "id": "finance.credit_lending.credit_cards"
     },
-    "description": "Premium travel rewards credit card with 75,000 bonus points after spending $4,000 in the first 3 months. No foreign transaction fees, trip cancellation insurance, and primary car rental coverage.",
+    "description": "Secure online bill payment for Atlas Rewards credit card customers, with saved payment methods, payment reminders, and instant confirmation.",
     "start_at": "2026-01-01T00:00:00Z",
     "expire_at": "2026-12-31T23:59:59Z",
     "status": "active",
@@ -38,10 +38,11 @@
   },
   "action": {
     "type": "web_redirect",
-    "name": "Apply now",
-    "description": "Redirect to the Atlas Rewards credit card application page.",
+    "name": "Pay bill",
+    "consumer_action": "pay",
+    "description": "Redirect to the Atlas Rewards credit card payment portal.",
     "payload": {
-      "target": "https://cards.atlasbank.example/apply/rewards"
+      "target": "https://cards.atlasbank.example/pay/rewards"
     }
   },
   "targeting": [

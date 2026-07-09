@@ -48,10 +48,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - `igaming-offer.json`
 - `offer_info.tags` in the query response example to demonstrate
   partner-supplied content matching hints.
+- Top-level `content_language` in canonical offer examples to demonstrate
+  BCP 47 content-language metadata separate from targeting language.
 - Location Search API examples for text search, exact lookup, country-code
   migration, and Query API `location_ids` chain construction.
 - Location resolve examples for ISO 3166-2 subdivision codes, Cloudflare
   visitor location headers, and Google Cloud Load Balancing location headers.
+- Consumer action examples for `purchase`, `pay`, and `order` semantic
+  boundaries.
 
 ### Changed
 

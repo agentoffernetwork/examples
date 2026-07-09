@@ -14,9 +14,10 @@
   },
   "action": {
     "type": "web_redirect",
-    "name": "Start plan",
+    "name": "Order meal kit",
+    "consumer_action": "order",
     "payload": {
-      "target": "https://www.harvestbox.example/meal-kits/high-protein"
+      "target": "https://www.harvestbox.example/meal-kits/high-protein/order"
     }
   },
   "bid": {
