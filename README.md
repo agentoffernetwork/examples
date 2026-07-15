@@ -17,6 +17,14 @@
 
 ## Start Here
 
+### Stable v0.2 response
+
+[`http/offer-response-v0.2.json`](http/offer-response-v0.2.json) is the
+canonical complete Offer v0.2 response example, including conversion goals and
+card display fields such as rating, price unit, structured properties,
+fulfillment note, and creative alt text. v0.1 examples remain the compatibility
+baseline.
+
 1. Start with [`offer-query-request.json`](http/offer-query-request.json) to understand how agents search for offers, including optional `location_ids` and `verified_age_over` viewer context.
 2. Read [`offer-response.json`](http/offer-response.json) to see the canonical `request_id` + `offers[]` response envelope.
 3. Inspect [`notion-offer.json`](http/notion-offer.json) for a compact software/SaaS offer.

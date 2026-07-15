@@ -1,0 +1,29 @@
+{
+  "goals": [
+    {
+      "event": "install",
+      "pricing": {
+        "model": "cpa",
+        "amount": "2.50",
+        "currency": "USD"
+      }
+    },
+    {
+      "event": "first_deposit",
+      "pricing": {
+        "model": "cpa",
+        "amount": "50",
+        "currency": "USD"
+      },
+      "description": "First-time deposit, recognized after KYC review."
+    },
+    {
+      "event": "sale",
+      "pricing": {
+        "model": "cps",
+        "rate": "8.5"
+      },
+      "description": "8.5% of order value."
+    }
+  ]
+}

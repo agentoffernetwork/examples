@@ -1,5 +1,16 @@
 # Changelog
 
+## Offer v0.2 card display fields (2026-07-15)
+
+- Updated the canonical `offer-response-v0.2.json` example to demonstrate the
+  v0.2 card display fields with recommended structured property types.
+- Clarified that the v0.2 response example covers both conversion goals and
+  display-ready card content.
+
+## Formal v0.2 conversion goals (2026-07-10)
+
+- Added the complete `offer-response-v0.2.json` example with conversion goals.
+
 All notable changes to the AgentOffer Examples will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
