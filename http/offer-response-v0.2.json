@@ -34,6 +34,5 @@
         {"event": "subscription", "pricing": {"model": "cps", "rate": "8.5"}, "description": "Revenue share after subscription activation."}
       ]
     }
-  ],
-  "extra": {}
+  ]
 }

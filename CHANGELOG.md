@@ -1,5 +1,14 @@
 # Changelog
 
+## Protocol v0.2 canonical contract baseline (2026-07-27)
+
+- Added canonical Query minimal/full requests and response, Provider
+  basic/full requests and success/error responses, and Partner/Agent Postback
+  v0.2 payloads.
+- Bound the published Agent webhook HTTP request, retry table, and signing
+  guide to the machine-readable raw-body/HMAC vectors.
+- Marked legacy v0.1 examples as historical for new integration guidance.
+
 ## Offer v0.2 card display fields (2026-07-15)
 
 - Updated the canonical `offer-response-v0.2.json` example to demonstrate the
@@ -49,7 +58,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Version: `v0.1`
 - Status: `Draft`
 
-## [Unreleased]
+## Historical v0.1 development log (formerly Unreleased)
+
+> Historical v0.1 line — not current Examples v0.2 integration guidance. The
+> current v0.2 examples are recorded in the dated sections above.
 
 ### Added
 

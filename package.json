@@ -1,0 +1,9 @@
+{
+  "name": "@agentoffer/examples",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:contract-ci",
+    "test:contract-ci": "node test/contract-ci-suite.test.mjs --execute"
+  }
+}

@@ -1,110 +1,68 @@
-# Part A (AON -> Agent) Postback HMAC-SHA256 Signing Test Vectors
+# AON → Agent webhook signing and receiver vectors
 
-> Reference vectors for Agent developer implementations of AON -> Agent
-> postback signature verification. Every vector below was produced by the
-> Node.js and shell scripts shown in the appendix; Agent developers can
-> reproduce them byte-for-byte to self-test their signature verifier.
->
-> See [`protocol/specs/postback.md`](../../../protocol/specs/postback.md)
-> for the normative signing rules.
+> These fixtures define the WS-22-S3 target contract. They are not evidence
+> that the current notifier has implemented it.
 
-## Common Inputs
+See [`protocol/specs/postback.md`](../../../protocol/specs/postback.md) for the normative rules.
+
+The machine-readable source for every vector below is
+[`postback-agent-webhook-v0.2.json`](../../../../schema/fixtures/postback-agent-webhook-v0.2.json).
+Run the repository contract gate from `protocol/github-repos` with:
+
+```bash
+bash schema/test/validate-postback.sh
+```
+
+It invokes the zero-dependency Python
+[`verify-postback-v0.2.py`](../../../../schema/test/verify-postback-v0.2.py)
+reference verifier as well as schema validation.
+
+## Fixed inputs
 
 | Field | Value |
-|------:|:------|
-| Signing algorithm | HMAC-SHA256, lowercase hex encoding |
-| Secret | `aon-postback-secret-demo-rotate` |
+|---|---|
 | HTTP method | `POST` |
-| HTTP path | `/webhook/aon/postback` |
-| Canonical body (exact bytes) | `{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}` |
+| Origin-form request-target | `/webhook/aon/conversion?source=aon&delivery=conversion` |
+| Raw body | `{"event_id":"evt_01J0AONCONVERSION000001","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","event_name":"subscription","amount":120,"currency":"USD","sub_id":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}` |
+| Current key id / secret | `aon_cb_v2` / `aon-postback-secret-demo-current` |
+| Previous key id / secret | `aon_cb_v1` / `aon-postback-secret-demo-previous` |
 
-## Signing String Construction
+The signing string is exactly `POST\n{request-target}\n{raw-body}\n{timestamp}`.
+There is no nonce component. The request-target is byte-preserved: do not
+decode, sort, normalize, or re-serialize it.
 
-The signing string is formed by joining five components with a single LF
-(`\n`, U+000A) character, in this exact order:
+## Verification vectors
 
-```
-METHOD        + "\n"
-PATH          + "\n"
-CANONICAL_BODY + "\n"
-TIMESTAMP     + "\n"
-NONCE
-```
+| Case | X-AON-Key | Timestamp | X-AON-Signature | Expected result |
+|---|---|---:|---|---|
+| Current key, valid body | `aon_cb_v2` | 1776450600 | `8b0d7aa29c9717dc0fdcb278237050d6a5c1ca816ad0b6560b8240722304a5b8` | Validate and process subject to idempotency. |
+| Previous key inside grace | `aon_cb_v1` | 1776450600 | `4205100409775f6e849996127258d4e4e98446ee827fe633ed621df94c1df807` | Validate with the selected previous secret. |
+| Unknown key | `aon_cb_unknown` | 1776450600 | any value | Reject; do not try another secret. |
+| Tampered body | `aon_cb_v2` | 1776450600 | current-key value above | Reject; raw body no longer matches. |
+| Expired timestamp | `aon_cb_v2` | 1776100000 | `98e8425ef979d04570977acd7e021c1d44ad95e5fdf5acdc86c6180f95cc01a2` | Reject before business processing. |
+| Exactly 300 seconds skew | selected valid key | receiver time ±300 seconds | recomputed valid value | Accept the freshness boundary. |
+| 301 seconds skew | selected valid key | receiver time ±301 seconds | recomputed valid value | Reject the freshness boundary. |
 
-No trailing newline. No whitespace insertion. The body MUST be the exact
-bytes AON transmitted on the wire -- Agent developers MUST NOT re-serialize
-or re-sort keys before hashing.
+Receivers use a constant-time comparison for a known key. A production receiver
+requires all three headers. Only an explicitly local/test insecure mode may
+skip timestamp, key, and signature verification; it still validates schema and
+idempotency.
 
-> Shares signature mechanics with [offer-provider-api.md S4](../../../protocol/specs/offer-provider-api.md#4-authentication).
+## Idempotency vectors
 
-## Test Vectors
+| First / repeated delivery | Expected result |
+|---|---|
+| First valid `agent_id`, `event_id`, and raw body | Apply the business effect and record durable state. |
+| Same identifiers and same raw body within at least 24 hours | Return 2xx without a second effect. |
+| Same identifiers and a different raw body | Return HTTP 409 without processing the second body. |
 
-### Case 1 -- Valid request (expected: process the postback)
-
-| Header | Value |
-|-------:|:------|
-| `X-AON-Key` | `aon-agent-key-demo` |
-| `X-AON-Timestamp` | `1776450600` |
-| `X-AON-Nonce` | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
-| `X-AON-Signature` | `64422739a3f408490b65c932efcd66431069b64ace4b6e65312951b13c9b051c` |
-
-Agent developer MUST verify the signature, confirm the timestamp is within
-the +/-5-minute window, and process the conversion event.
-
-### Case 2 -- Tampered signature (expected: reject and discard)
-
-Same inputs as Case 1, but with a deliberately wrong signature:
-
-| Header | Value |
-|-------:|:------|
-| `X-AON-Timestamp` | `1776450600` |
-| `X-AON-Nonce` | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
-| `X-AON-Signature` | `deadbeef0badc0ffee0123456789abcdef0123456789abcdef0123456789abcd` |
-
-Agent developer MUST compute the expected signature, compare in constant
-time, and discard the payload when signatures do not match. Returning a
-non-2xx status (e.g. `401`) is RECOMMENDED but any non-2xx triggers AON
-retry.
-
-### Case 3 -- Expired timestamp (expected: reject and discard)
-
-The signature below is correctly computed for the inputs shown, but the
-timestamp (`1776100000`, roughly 4 days before Case 1) falls outside the
-mandatory +/-5-minute window:
-
-| Header | Value |
-|-------:|:------|
-| `X-AON-Timestamp` | `1776100000` |
-| `X-AON-Nonce` | `b2c3d4e5-f6a7-8901-bcde-f12345678901` |
-| `X-AON-Signature` | `1cb84e2268fc300b0406619a5815a757b52e10604da1fd3eb12a23309ccf8ce8` |
-
-Agent developer MUST reject before even attempting signature verification
-once the timestamp falls outside the allowed skew.
-
-## Appendix -- Reproducing the Vectors
+## Reproducing the current-key vector
 
 ```bash
-node -e '
-const c = require("crypto");
-const secret = "aon-postback-secret-demo-rotate";
-const body = `{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}`;
-function sign(ts, nonce) {
-  const s = `POST\n/webhook/aon/postback\n${body}\n${ts}\n${nonce}`;
-  return c.createHmac("sha256", secret).update(s, "utf8").digest("hex");
-}
-console.log("Case 1:", sign("1776450600", "a1b2c3d4-e5f6-7890-abcd-ef1234567890"));
-console.log("Case 3:", sign("1776100000", "b2c3d4e5-f6a7-8901-bcde-f12345678901"));
-'
-```
-
-The same computation in pure shell, when `openssl` is available:
-
-```bash
-printf 'POST\n/webhook/aon/postback\n%s\n%s\n%s' \
-  '{"event_id":"evt_pb_75RGRXRYBHPAE5Z1YZBR604KJP","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","conversion_type":"sale","amount":120,"currency":"USD","bid_amount":24,"sub_id_1":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}' \
+printf 'POST\n/webhook/aon/conversion?source=aon&delivery=conversion\n%s\n%s' \
+  '{"event_id":"evt_01J0AONCONVERSION000001","event_type":"conversion","aon_tracking_id":"trk_01_click_abc","offer_id":"ao_01HX2B3C4D5E6F7G8H9J0KABCD","agent_id":"agt_assistant_123","event_name":"subscription","amount":120,"currency":"USD","sub_id":"homepage_widget","sub_id_2":"cohort_a","timestamp":"2026-03-21T03:10:00Z"}' \
   1776450600 \
-  a1b2c3d4-e5f6-7890-abcd-ef1234567890 \
-  | openssl dgst -sha256 -hmac "aon-postback-secret-demo-rotate" -hex
+  | openssl dgst -sha256 -hmac 'aon-postback-secret-demo-current' -hex
 ```
 
-Both commands yield `64422739...9b051c` for Case 1.
+The expected digest is pinned by `postback-agent-webhook-v0.2.json`.

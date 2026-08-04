@@ -1,4 +1,4 @@
-name: Validate Examples
+name: Examples Contract CI
 
 on:
   push:
@@ -7,77 +7,16 @@ on:
     branches: [main]
 
 jobs:
-  json-format:
-    name: JSON Format Check
+  contract-ci:
+    name: Complete v0.2 Examples Contract Suite
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Check all JSON files are well-formed
-        run: |
-          failed=0
-          for f in $(find . -name '*.json' -not -path '*/node_modules/*'); do
-            if python3 -m json.tool "$f" > /dev/null 2>&1; then
-              echo "OK: $f"
-            else
-              echo "FAIL: $f"
-              failed=1
-            fi
-          done
-          exit $failed
-
-  schema-validation:
-    name: Validate Against Schema
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Checkout schema repo
-        uses: actions/checkout@v4
-        with:
-          repository: agentoffernetwork/schema
-          path: _schema
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install ajv-cli
-        run: npm install -g ajv-cli ajv-formats
-
-      - name: Validate offer examples against schema
-        run: |
-          schema="_schema/json-schema/offer-schema-v0.1.json"
-          failed=0
-          for f in http/*-offer.json; do
-            if ajv validate -s "$schema" -d "$f" --spec=draft2020 -c ajv-formats 2>/dev/null; then
-              echo "PASS: $f"
-            else
-              echo "FAIL: $f"
-              failed=1
-            fi
-          done
-          exit $failed
-
-      - name: Validate Query API request example against schema
-        run: |
-          ajv validate \
-            -s _schema/json-schema/offer-query-schema-v0.1.json \
-            -d http/offer-query-request.json \
-            --spec=draft2020 \
-            -c ajv-formats
-
-      - name: Validate OfferProvider request examples against schema
-        run: |
-          schema="_schema/json-schema/offer-provider-request-v0.1.json"
-          failed=0
-          for f in http/offer-provider/*query*.json; do
-            if ajv validate -s "$schema" -d "$f" --spec=draft2020 -c ajv-formats 2>/dev/null; then
-              echo "PASS: $f"
-            else
-              echo "FAIL: $f"
-              failed=1
-            fi
-          done
-          exit $failed
+      - name: Run complete v0.2 examples contract suite
+        run: npm run test:contract-ci

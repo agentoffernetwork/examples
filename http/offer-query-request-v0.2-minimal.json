@@ -1,0 +1,13 @@
+{
+  "context": {
+    "user_profile": {}
+  },
+  "intent": {
+    "content": [
+      {
+        "type": "input_text",
+        "text": "Find a useful offer"
+      }
+    ]
+  }
+}

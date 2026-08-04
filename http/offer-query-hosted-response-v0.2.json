@@ -1,0 +1,50 @@
+{
+  "code": "SUCCESS",
+  "message": "",
+  "data": {
+    "request_id": "0195ef94-f17d-7a4f-b6e0-2c52bb49e13f",
+    "offers": [
+      {
+        "offer_id": "019fc211-c6cd-7e62-9c4d-699c243e6c96",
+        "offer_instance_id": "019fc211-c695-7bd2-9e1b-9a06c2952770",
+        "version": "2.0",
+        "content_language": "en",
+        "offer_info": {
+          "title": "TeamFlow Pro Plan",
+          "offer_type": "online_service",
+          "category": {
+            "id": "computers_electronics.computers.software"
+          },
+          "priority": 0,
+          "description": "Collaborative workspace for docs, wikis, and project planning."
+        },
+        "entity": {
+          "id": "ent_teamflow",
+          "name": "TeamFlow"
+        },
+        "action": {
+          "type": "web_redirect",
+          "name": "Start free trial",
+          "payload": {
+            "target": "https://aon.link/oyMJZTta"
+          }
+        },
+        "goals": [
+          {
+            "event": "conversion",
+            "pricing": {
+              "model": "cpa",
+              "amount": "10",
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "extra": {
+    "decision_engine": "real",
+    "is_test": false,
+    "tracked_offers": 1
+  }
+}

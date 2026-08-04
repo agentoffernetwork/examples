@@ -1,0 +1,43 @@
+{
+  "request_id": "0195f0a1-2b3c-4d5e-8f7a-8b9c0d1e2f3a",
+  "timestamp": "2026-07-27T05:00:00Z",
+  "test_mode": false,
+  "placement_id": "plc_A1b2C3d4E5f6G7h8",
+  "context": {
+    "platform": {
+      "name": "TravelBot",
+      "version": "2.1.0",
+      "channel": "chat"
+    },
+    "session_id": "sess_abc123",
+    "conversation_id": "conv_42",
+    "user_profile": {
+      "user_pseudo_id": "viewer_xyz",
+      "language": "en-US",
+      "location_ids": ["1014221", "21137", "2840"],
+      "verified_age_over": [18],
+      "interests": ["travel", "hotels"],
+      "device_info": {
+        "device_type": "mobile",
+        "os": "ios",
+        "os_version": "18.2",
+        "user_agent": "AON-Example/2.0"
+      }
+    }
+  },
+  "intent": {
+    "content": [
+      {
+        "type": "input_text",
+        "text": "Find a hotel in Tokyo under 200 USD per night"
+      }
+    ]
+  },
+  "constraints": {
+    "category_ids": ["travel_tourism"]
+  },
+  "pagination": {
+    "limit": 5,
+    "offset": 0
+  }
+}
