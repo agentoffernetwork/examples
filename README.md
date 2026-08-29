@@ -11,8 +11,10 @@ unversioned. These payloads do not claim deployment or runtime availability.
 ## Start here
 
 - [Query request and response](v0.3/http/offer-query.json)
-- [Hosted query response](v0.3/http/offer-query-hosted-response.json)
+- [Partner Offer artifact](v0.3/http/offer-partner.json)
 - [Offer control](v0.3/http/offer-control.json)
+- [OfferProvider request](v0.3/http/offer-provider/request.json)
+- [OfferProvider success](v0.3/http/offer-provider/success.json)
 - [Provider Postback success](v0.3/http/postback/partner/basic-conversion.http)
 - [Provider Postback rejection](v0.3/http/postback/partner/invalid-unknown-field.http)
 - [Agent Postback success](v0.3/http/postback/agent/basic-conversion.http)
@@ -20,6 +22,9 @@ unversioned. These payloads do not claim deployment or runtime availability.
 - [OfferProvider HMAC signing vectors](v0.3/http/offer-provider/hmac-signing-cases.md)
 - [Contract schemas](https://github.com/agentoffernetwork/schema)
 - [Agent and Partner guides](https://github.com/agentoffernetwork/protocol)
+
+Hosted deployment responses are runtime-owned projections and are not published
+as canonical examples in this repository.
 
 ## Historical contracts
 
