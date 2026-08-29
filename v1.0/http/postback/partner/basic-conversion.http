@@ -1,0 +1,10 @@
+### Provider -> AON current v1.0 first success
+POST https://aon-deployment.example/v1/postback/019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae001 HTTP/1.1
+Content-Type: application/json
+AON-Protocol-Version: 1.0
+X-Forwarded-For: 203.0.113.9
+
+{"event_name":"subscription","aon_tracking_id":"trk_01_click_abc","amount":"120.00","currency":"USD","event_id":"evt_01J0AONCONVERSION000001"}
+
+### Expected 200 response headers include AON-Protocol-Version: 1.0.
+### Its data is a ProviderPostbackResponseV10 with result=accepted.

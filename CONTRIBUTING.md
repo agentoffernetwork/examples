@@ -35,9 +35,9 @@ npm run test:contract-ci
 Validate shared types and schema vectors in the standalone
 [agentoffernetwork/schema](https://github.com/agentoffernetwork/schema)
 repository. For integration guidance, use the canonical
-[Agent quickstart](https://github.com/agentoffernetwork/protocol/blob/main/v0.3/quickstarts/agent.md)
+[Agent quickstart](https://github.com/agentoffernetwork/protocol/blob/main/v1.0/quickstarts/agent.md)
 or
-[Partner quickstart](https://github.com/agentoffernetwork/protocol/blob/main/v0.3/quickstarts/partner.md).
+[Partner quickstart](https://github.com/agentoffernetwork/protocol/blob/main/v1.0/quickstarts/partner.md).
 
 ## Code of Conduct
 
