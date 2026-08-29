@@ -1,0 +1,57 @@
+{
+  "request_id": "0195f0a1-3c4d-7e6f-8a9b-0c1d2e3f4a5b",
+  "protocol_version": "0.3",
+  "language": "en-US",
+  "offers": [
+    {
+      "source_offer_id": "partner-kyoto-hotel-001",
+      "version": "3.0",
+      "content_language": "en-US",
+      "offer_info": {
+        "title": "Kyoto Garden Hotel",
+        "category": {
+          "id": "travel_tourism.accommodations.hotels_motels_resorts.hotels"
+        },
+        "description": "Quiet central Kyoto hotel with garden-facing rooms.",
+        "commercial": {
+          "price": {
+            "amount": "210.00",
+            "currency": "USD",
+            "unit": "night"
+          }
+        }
+      },
+      "entity": {
+        "id": "kyoto-garden-hotel",
+        "name": "Kyoto Garden Hotel",
+        "type": "merchant"
+      },
+      "action": {
+        "type": "open_url",
+        "consumer_action": "book",
+        "payload": {
+          "url": "https://booking.example/kyoto-garden-hotel"
+        }
+      },
+      "targeting": [
+        {
+          "language": "en"
+        }
+      ],
+      "conversion_rule": {
+        "click_window_hours": 720,
+        "dedup_strategy": "first"
+      },
+      "goals": [
+        {
+          "event": "booking",
+          "pricing": {
+            "model": "cpa",
+            "amount": "25.00",
+            "currency": "USD"
+          }
+        }
+      ]
+    }
+  ]
+}
