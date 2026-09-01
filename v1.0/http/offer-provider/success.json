@@ -9,6 +9,7 @@
       "content_language": "en-US",
       "offer_info": {
         "title": "Kyoto Garden Hotel",
+        "short_description": "Quiet central Kyoto hotel with garden-facing rooms.",
         "category": {
           "id": "travel_tourism.accommodations.hotels_motels_resorts.hotels"
         },
