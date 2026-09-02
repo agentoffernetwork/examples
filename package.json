@@ -1,0 +1,13 @@
+{
+  "name": "@agentoffer/examples",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:contract-ci",
+    "test:contract-ci": "node scripts/validate-v1-examples.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.18.0",
+    "ajv-formats": "3.0.1"
+  }
+}
