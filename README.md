@@ -23,6 +23,11 @@ unversioned. These payloads do not claim deployment or runtime availability.
 - [Contract schemas](https://github.com/agentoffernetwork/schema)
 - [Agent and Partner guides](https://github.com/agentoffernetwork/protocol)
 
+The Query response example includes one optional
+`offer_info.commercial.display_price` presentation value. Consumers overlay its
+`amount` and `currency` onto the original `price` only for display; Partner and
+OfferProvider supply examples intentionally omit the response-owned field.
+
 Hosted deployment responses are runtime-owned projections and are not published
 as canonical examples in this repository.
 
