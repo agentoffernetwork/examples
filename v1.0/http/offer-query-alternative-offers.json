@@ -1,0 +1,50 @@
+{
+  "request": {
+    "request_id": "019dd208-27d2-7673-b16f-6897fa120307",
+    "context": {},
+    "intent": {
+      "content": [{"type": "input_text", "text": "Find an astronomy bookshop"}],
+      "provenance": "user_expressed"
+    },
+    "force_offer": false,
+    "response_options": {"thinking_mode": false}
+  },
+  "response": {
+    "request_id": "019dd208-27d2-7673-b16f-6897fa120307",
+    "protocol_version": "1.0",
+    "language": "en-US",
+    "offers": [],
+    "empty_reason": "below_relevance_threshold",
+    "alternative_offers": [
+      {
+        "basis": "regional_popularity",
+        "selection_reason": "No astronomy bookshop matched. This hotel is popular in your country, the United States, and is offered as a separate option, not a match for your bookshop search.",
+        "offer": {
+          "offer_id": "019dd208-27d2-7673-b16f-6897fa120303",
+          "offer_instance_id": "019dd208-27d2-7673-b16f-6897fa120308",
+          "version": "3.0",
+          "offer_info": {
+            "title": "Hotel near Union Square",
+            "short_description": "Quiet, walkable hotel near Union Square.",
+            "category": {"id": "travel_tourism.accommodations.hotels_motels_resorts.hotels"},
+            "description": "A quiet hotel with walkable access to Union Square.",
+            "commercial": {
+              "price": {"amount": "99.00", "currency": "USD", "unit": "night"},
+              "display_price": {"amount": "718.42", "currency": "CNY"}
+            }
+          },
+          "entity": {"id": "example-hotels", "name": "Example Hotels", "type": "merchant"},
+          "listing_source": {
+            "kind": "marketplace",
+            "name": "Example Travel",
+            "observed_at": "2026-08-13T00:00:00Z",
+            "logo": "https://cdn.example.com/example-travel.svg"
+          },
+          "action": {"type": "open_url", "consumer_action": "book", "payload": {"url": "https://example.com/hotel"}},
+          "claims": [{"kind": "advertiser_claim", "text": "Free cancellation until 48 hours before check-in."}],
+          "goals": [{"event": "booking", "pricing": {"model": "cpa", "amount": "10", "currency": "USD"}}]
+        }
+      }
+    ]
+  }
+}
