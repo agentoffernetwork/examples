@@ -1,0 +1,598 @@
+{
+  "request": {
+    "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+    "context": {},
+    "intent": {
+      "content": [
+        {
+          "type": "input_text",
+          "text": "Find flights matching these explicit itinerary constraints."
+        }
+      ],
+      "provenance": "user_expressed",
+      "details": {
+        "profile": "flight",
+        "data": {
+          "query_kind": "reference_search",
+          "legs": [
+            {
+              "origin": {
+                "kind": "airport",
+                "code": "SFO"
+              },
+              "destination": {
+                "kind": "airport",
+                "code": "NRT"
+              },
+              "departure_date": "2026-11-12"
+            }
+          ],
+          "cabin_class": "economy",
+          "max_connections": 1
+        }
+      }
+    },
+    "response_options": {
+      "thinking_mode": false
+    }
+  },
+  "response": {
+    "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+    "protocol_version": "1.0",
+    "language": "en-US",
+    "offers": [
+      {
+        "offer_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae101",
+        "offer_instance_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae102",
+        "version": "3.0",
+        "offer_info": {
+          "title": "Synthetic San Francisco to Tokyo reference fare",
+          "offer_type": "offline_service",
+          "category": {
+            "id": "travel_tourism.air_travel.airline_tickets_fares_flights"
+          },
+          "description": "Reference fare with unknown traveler scope; not a party total.",
+          "commercial": {
+            "price": {
+              "amount": "912.40",
+              "currency": "USD",
+              "tax_status": "unknown"
+            }
+          },
+          "details": {
+            "profile": "flight",
+            "data": {
+              "trip_type": "one_way",
+              "legs": [
+                {
+                  "segments": [
+                    {
+                      "departure": {
+                        "airport_code": "SFO",
+                        "local_at": "2026-11-12T12:30:00"
+                      },
+                      "arrival": {
+                        "airport_code": "NRT",
+                        "local_at": "2026-11-13T16:25:00"
+                      },
+                      "duration_minutes": 715,
+                      "marketing_carrier": {
+                        "code": "UA"
+                      },
+                      "flight_number": "837",
+                      "cabin_class": "economy",
+                      "stops": []
+                    }
+                  ],
+                  "duration_minutes": 715
+                }
+              ],
+              "price_basis": "reference"
+            }
+          }
+        },
+        "entity": {
+          "id": "synthetic-air",
+          "name": "Synthetic Air"
+        },
+        "action": {
+          "type": "open_url",
+          "consumer_action": "book",
+          "payload": {
+            "url": "https://example.com/flights/reference-direct"
+          }
+        },
+        "goals": [
+          {
+            "event": "booking",
+            "pricing": {
+              "model": "cpa",
+              "amount": "10",
+              "currency": "USD"
+            }
+          }
+        ]
+      },
+      {
+        "offer_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae103",
+        "offer_instance_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae104",
+        "version": "3.0",
+        "offer_info": {
+          "title": "Synthetic connecting reference fare",
+          "offer_type": "offline_service",
+          "category": {
+            "id": "travel_tourism.air_travel.airline_tickets_fares_flights"
+          },
+          "description": "Reference fare with unknown traveler scope; not a party total.",
+          "commercial": {
+            "price": {
+              "amount": "912.40",
+              "currency": "USD",
+              "tax_status": "unknown"
+            }
+          },
+          "details": {
+            "profile": "flight",
+            "data": {
+              "trip_type": "one_way",
+              "legs": [
+                {
+                  "duration_minutes": 870,
+                  "segments": [
+                    {
+                      "departure": {
+                        "airport_code": "SFO",
+                        "local_at": "2026-11-12T12:30:00"
+                      },
+                      "arrival": {
+                        "airport_code": "LAX",
+                        "local_at": "2026-11-12T14:00:00"
+                      },
+                      "duration_minutes": 90,
+                      "marketing_carrier": {
+                        "code": "UA"
+                      },
+                      "flight_number": "101",
+                      "cabin_class": "economy",
+                      "stops": []
+                    },
+                    {
+                      "departure": {
+                        "airport_code": "LAX",
+                        "local_at": "2026-11-12T16:00:00"
+                      },
+                      "arrival": {
+                        "airport_code": "NRT",
+                        "local_at": "2026-11-13T20:00:00"
+                      },
+                      "duration_minutes": 660,
+                      "marketing_carrier": {
+                        "code": "UA"
+                      },
+                      "flight_number": "102",
+                      "cabin_class": "economy",
+                      "stops": [
+                        {
+                          "name": "Synthetic stop location",
+                          "duration_minutes": 30
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "price_basis": "reference"
+            }
+          }
+        },
+        "entity": {
+          "id": "synthetic-air",
+          "name": "Synthetic Air"
+        },
+        "action": {
+          "type": "open_url",
+          "consumer_action": "book",
+          "payload": {
+            "url": "https://example.com/flights/reference-connection"
+          }
+        },
+        "goals": [
+          {
+            "event": "booking",
+            "pricing": {
+              "model": "cpa",
+              "amount": "10",
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "flight_search": {
+      "query_kind": "reference_search",
+      "status": "complete",
+      "fetched_at": "2026-10-01T09:00:00Z"
+    }
+  },
+  "scenarios": {
+    "complete_empty": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "reference_search",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-11-12"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 1
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "response": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "protocol_version": "1.0",
+        "language": "en-US",
+        "offers": [],
+        "flight_search": {
+          "query_kind": "reference_search",
+          "status": "complete",
+          "fetched_at": "2026-10-01T09:00:00Z"
+        }
+      }
+    },
+    "partial_empty": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "reference_search",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-11-12"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 1
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "response": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "protocol_version": "1.0",
+        "language": "en-US",
+        "offers": [],
+        "flight_search": {
+          "query_kind": "reference_search",
+          "status": "partial",
+          "fetched_at": "2026-10-01T09:00:00Z"
+        }
+      }
+    },
+    "partial_matches": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "reference_search",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-11-12"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 1
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "response": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "protocol_version": "1.0",
+        "language": "en-US",
+        "offers": [
+          {
+            "offer_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae101",
+            "offer_instance_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae102",
+            "version": "3.0",
+            "offer_info": {
+              "title": "Synthetic San Francisco to Tokyo reference fare",
+              "offer_type": "offline_service",
+              "category": {
+                "id": "travel_tourism.air_travel.airline_tickets_fares_flights"
+              },
+              "description": "Reference fare with unknown traveler scope; not a party total.",
+              "commercial": {
+                "price": {
+                  "amount": "912.40",
+                  "currency": "USD",
+                  "tax_status": "unknown"
+                }
+              },
+              "details": {
+                "profile": "flight",
+                "data": {
+                  "trip_type": "one_way",
+                  "legs": [
+                    {
+                      "segments": [
+                        {
+                          "departure": {
+                            "airport_code": "SFO",
+                            "local_at": "2026-11-12T12:30:00"
+                          },
+                          "arrival": {
+                            "airport_code": "NRT",
+                            "local_at": "2026-11-13T16:25:00"
+                          },
+                          "duration_minutes": 715,
+                          "marketing_carrier": {
+                            "code": "UA"
+                          },
+                          "flight_number": "837",
+                          "cabin_class": "economy",
+                          "stops": []
+                        }
+                      ],
+                      "duration_minutes": 715
+                    }
+                  ],
+                  "price_basis": "reference"
+                }
+              }
+            },
+            "entity": {
+              "id": "synthetic-air",
+              "name": "Synthetic Air"
+            },
+            "action": {
+              "type": "open_url",
+              "consumer_action": "book",
+              "payload": {
+                "url": "https://example.com/flights/reference-direct"
+              }
+            },
+            "goals": [
+              {
+                "event": "booking",
+                "pricing": {
+                  "model": "cpa",
+                  "amount": "10",
+                  "currency": "USD"
+                }
+              }
+            ]
+          }
+        ],
+        "flight_search": {
+          "query_kind": "reference_search",
+          "status": "partial",
+          "fetched_at": "2026-10-01T09:00:00Z"
+        }
+      }
+    },
+    "unsupported_capability": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "reference_search",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-11-12"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 1
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "error": {
+        "code": "BAD_REQUEST",
+        "message": "No configured source can verify the requested airport facts.",
+        "data": {},
+        "extra": {
+          "flight_search_error": {
+            "kind": "unsupported_capability",
+            "fields": [
+              "/intent/details/data/legs"
+            ]
+          }
+        }
+      }
+    },
+    "upstream_failure": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "reference_search",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-11-12"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 1
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "error": {
+        "code": "INTERNAL_ERROR",
+        "message": "All participating sources failed.",
+        "data": {},
+        "extra": {
+          "flight_search_error": {
+            "kind": "upstream_failure",
+            "fields": [
+              "/intent/details/data/legs"
+            ]
+          }
+        }
+      }
+    },
+    "invalid_query": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "reference_search",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-02-30"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 1
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "error": {
+        "code": "BAD_REQUEST",
+        "message": "The requested date is invalid.",
+        "data": {},
+        "extra": {
+          "flight_search_error": {
+            "kind": "invalid_query",
+            "fields": [
+              "/intent/details/data/legs/0/departure_date"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

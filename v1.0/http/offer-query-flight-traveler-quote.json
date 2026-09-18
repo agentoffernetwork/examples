@@ -1,0 +1,590 @@
+{
+  "request": {
+    "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+    "context": {},
+    "intent": {
+      "content": [
+        {
+          "type": "input_text",
+          "text": "Find flights matching these explicit itinerary constraints."
+        }
+      ],
+      "provenance": "user_expressed",
+      "details": {
+        "profile": "flight",
+        "data": {
+          "query_kind": "traveler_quote",
+          "legs": [
+            {
+              "origin": {
+                "kind": "airport",
+                "code": "SFO"
+              },
+              "destination": {
+                "kind": "airport",
+                "code": "NRT"
+              },
+              "departure_date": "2026-11-12"
+            }
+          ],
+          "cabin_class": "economy",
+          "max_connections": 0,
+          "travelers": [
+            {
+              "type": "adult",
+              "count": 1
+            },
+            {
+              "type": "child",
+              "count": 1,
+              "ages": [
+                8
+              ]
+            },
+            {
+              "type": "infant",
+              "count": 1,
+              "ages": [
+                1
+              ],
+              "infant_seat_required": [
+                false
+              ]
+            }
+          ],
+          "nonstop_only": true
+        }
+      }
+    },
+    "response_options": {
+      "thinking_mode": false
+    }
+  },
+  "response": {
+    "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+    "protocol_version": "1.0",
+    "language": "en-US",
+    "offers": [
+      {
+        "offer_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae101",
+        "offer_instance_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae102",
+        "version": "3.0",
+        "offer_info": {
+          "title": "Synthetic complete traveler itinerary quote",
+          "offer_type": "offline_service",
+          "category": {
+            "id": "travel_tourism.air_travel.airline_tickets_fares_flights"
+          },
+          "description": "Complete fare for the requested adult, child and infant itinerary.",
+          "commercial": {
+            "price": {
+              "amount": "1840.00",
+              "currency": "USD",
+              "tax_status": "included",
+              "unit": "one_time"
+            },
+            "quote": {
+              "observed_at": "2026-10-01T08:59:00Z"
+            }
+          },
+          "details": {
+            "profile": "flight",
+            "data": {
+              "trip_type": "one_way",
+              "legs": [
+                {
+                  "segments": [
+                    {
+                      "departure": {
+                        "airport_code": "SFO",
+                        "local_at": "2026-11-12T12:30:00"
+                      },
+                      "arrival": {
+                        "airport_code": "NRT",
+                        "local_at": "2026-11-13T16:25:00"
+                      },
+                      "duration_minutes": 715,
+                      "marketing_carrier": {
+                        "code": "UA"
+                      },
+                      "flight_number": "837",
+                      "cabin_class": "economy",
+                      "stops": []
+                    }
+                  ],
+                  "duration_minutes": 715
+                }
+              ],
+              "price_basis": "itinerary_total",
+              "travelers": [
+                {
+                  "type": "adult",
+                  "count": 1
+                },
+                {
+                  "type": "child",
+                  "count": 1,
+                  "ages": [
+                    8
+                  ]
+                },
+                {
+                  "type": "infant",
+                  "count": 1,
+                  "ages": [
+                    1
+                  ],
+                  "infant_seat_required": [
+                    false
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "entity": {
+          "id": "synthetic-air",
+          "name": "Synthetic Air"
+        },
+        "action": {
+          "type": "open_url",
+          "consumer_action": "book",
+          "payload": {
+            "url": "https://example.com/flights/traveler-quote"
+          }
+        },
+        "goals": [
+          {
+            "event": "booking",
+            "pricing": {
+              "model": "cpa",
+              "amount": "10",
+              "currency": "USD"
+            }
+          }
+        ]
+      }
+    ],
+    "flight_search": {
+      "query_kind": "traveler_quote",
+      "status": "complete",
+      "fetched_at": "2026-10-01T09:00:00Z"
+    }
+  },
+  "scenarios": {
+    "round_trip": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "traveler_quote",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-11-12"
+                },
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "departure_date": "2026-11-20"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 0,
+              "travelers": [
+                {
+                  "type": "adult",
+                  "count": 1
+                },
+                {
+                  "type": "child",
+                  "count": 1,
+                  "ages": [
+                    8
+                  ]
+                },
+                {
+                  "type": "infant",
+                  "count": 1,
+                  "ages": [
+                    1
+                  ],
+                  "infant_seat_required": [
+                    false
+                  ]
+                }
+              ],
+              "nonstop_only": true
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "response": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "protocol_version": "1.0",
+        "language": "en-US",
+        "offers": [
+          {
+            "offer_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae101",
+            "offer_instance_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae102",
+            "version": "3.0",
+            "offer_info": {
+              "title": "Synthetic complete traveler itinerary quote",
+              "offer_type": "offline_service",
+              "category": {
+                "id": "travel_tourism.air_travel.airline_tickets_fares_flights"
+              },
+              "description": "Complete fare for the requested adult, child and infant itinerary.",
+              "commercial": {
+                "price": {
+                  "amount": "3600.00",
+                  "currency": "USD",
+                  "tax_status": "included",
+                  "unit": "one_time"
+                },
+                "quote": {
+                  "observed_at": "2026-10-01T08:59:00Z"
+                }
+              },
+              "details": {
+                "profile": "flight",
+                "data": {
+                  "trip_type": "round_trip",
+                  "legs": [
+                    {
+                      "segments": [
+                        {
+                          "departure": {
+                            "airport_code": "SFO",
+                            "local_at": "2026-11-12T12:30:00"
+                          },
+                          "arrival": {
+                            "airport_code": "NRT",
+                            "local_at": "2026-11-13T16:25:00"
+                          },
+                          "duration_minutes": 715,
+                          "marketing_carrier": {
+                            "code": "UA"
+                          },
+                          "flight_number": "837",
+                          "cabin_class": "economy",
+                          "stops": []
+                        }
+                      ],
+                      "duration_minutes": 715
+                    },
+                    {
+                      "segments": [
+                        {
+                          "departure": {
+                            "airport_code": "NRT",
+                            "local_at": "2026-11-20T10:00:00"
+                          },
+                          "arrival": {
+                            "airport_code": "SFO",
+                            "local_at": "2026-11-20T20:00:00"
+                          },
+                          "duration_minutes": 600,
+                          "marketing_carrier": {
+                            "code": "UA"
+                          },
+                          "flight_number": "103",
+                          "cabin_class": "economy",
+                          "stops": []
+                        }
+                      ],
+                      "duration_minutes": 600
+                    }
+                  ],
+                  "price_basis": "itinerary_total",
+                  "travelers": [
+                    {
+                      "type": "adult",
+                      "count": 1
+                    },
+                    {
+                      "type": "child",
+                      "count": 1,
+                      "ages": [
+                        8
+                      ]
+                    },
+                    {
+                      "type": "infant",
+                      "count": 1,
+                      "ages": [
+                        1
+                      ],
+                      "infant_seat_required": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "entity": {
+              "id": "synthetic-air",
+              "name": "Synthetic Air"
+            },
+            "action": {
+              "type": "open_url",
+              "consumer_action": "book",
+              "payload": {
+                "url": "https://example.com/flights/traveler-quote"
+              }
+            },
+            "goals": [
+              {
+                "event": "booking",
+                "pricing": {
+                  "model": "cpa",
+                  "amount": "10",
+                  "currency": "USD"
+                }
+              }
+            ]
+          }
+        ],
+        "flight_search": {
+          "query_kind": "traveler_quote",
+          "status": "complete",
+          "fetched_at": "2026-10-01T09:00:00Z"
+        }
+      }
+    },
+    "multi_city": {
+      "request": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "context": {},
+        "intent": {
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Find flights matching these explicit itinerary constraints."
+            }
+          ],
+          "provenance": "user_expressed",
+          "details": {
+            "profile": "flight",
+            "data": {
+              "query_kind": "traveler_quote",
+              "legs": [
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "SFO"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "departure_date": "2026-11-12"
+                },
+                {
+                  "origin": {
+                    "kind": "airport",
+                    "code": "NRT"
+                  },
+                  "destination": {
+                    "kind": "airport",
+                    "code": "SIN"
+                  },
+                  "departure_date": "2026-11-20"
+                }
+              ],
+              "cabin_class": "economy",
+              "max_connections": 0,
+              "travelers": [
+                {
+                  "type": "adult",
+                  "count": 1
+                },
+                {
+                  "type": "child",
+                  "count": 1,
+                  "ages": [
+                    8
+                  ]
+                },
+                {
+                  "type": "infant",
+                  "count": 1,
+                  "ages": [
+                    1
+                  ],
+                  "infant_seat_required": [
+                    false
+                  ]
+                }
+              ],
+              "nonstop_only": true
+            }
+          }
+        },
+        "response_options": {
+          "thinking_mode": false
+        }
+      },
+      "response": {
+        "request_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae301",
+        "protocol_version": "1.0",
+        "language": "en-US",
+        "offers": [
+          {
+            "offer_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae101",
+            "offer_instance_id": "019f5f65-dbc1-7c3c-9ef9-9d6d2d8ae102",
+            "version": "3.0",
+            "offer_info": {
+              "title": "Synthetic complete traveler itinerary quote",
+              "offer_type": "offline_service",
+              "category": {
+                "id": "travel_tourism.air_travel.airline_tickets_fares_flights"
+              },
+              "description": "Complete fare for the requested adult, child and infant itinerary.",
+              "commercial": {
+                "price": {
+                  "amount": "3600.00",
+                  "currency": "USD",
+                  "tax_status": "included",
+                  "unit": "one_time"
+                },
+                "quote": {
+                  "observed_at": "2026-10-01T08:59:00Z"
+                }
+              },
+              "details": {
+                "profile": "flight",
+                "data": {
+                  "trip_type": "multi_city",
+                  "legs": [
+                    {
+                      "segments": [
+                        {
+                          "departure": {
+                            "airport_code": "SFO",
+                            "local_at": "2026-11-12T12:30:00"
+                          },
+                          "arrival": {
+                            "airport_code": "NRT",
+                            "local_at": "2026-11-13T16:25:00"
+                          },
+                          "duration_minutes": 715,
+                          "marketing_carrier": {
+                            "code": "UA"
+                          },
+                          "flight_number": "837",
+                          "cabin_class": "economy",
+                          "stops": []
+                        }
+                      ],
+                      "duration_minutes": 715
+                    },
+                    {
+                      "segments": [
+                        {
+                          "departure": {
+                            "airport_code": "NRT",
+                            "local_at": "2026-11-20T10:00:00"
+                          },
+                          "arrival": {
+                            "airport_code": "SIN",
+                            "local_at": "2026-11-20T20:00:00"
+                          },
+                          "duration_minutes": 600,
+                          "marketing_carrier": {
+                            "code": "UA"
+                          },
+                          "flight_number": "103",
+                          "cabin_class": "economy",
+                          "stops": []
+                        }
+                      ],
+                      "duration_minutes": 600
+                    }
+                  ],
+                  "price_basis": "itinerary_total",
+                  "travelers": [
+                    {
+                      "type": "adult",
+                      "count": 1
+                    },
+                    {
+                      "type": "child",
+                      "count": 1,
+                      "ages": [
+                        8
+                      ]
+                    },
+                    {
+                      "type": "infant",
+                      "count": 1,
+                      "ages": [
+                        1
+                      ],
+                      "infant_seat_required": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "entity": {
+              "id": "synthetic-air",
+              "name": "Synthetic Air"
+            },
+            "action": {
+              "type": "open_url",
+              "consumer_action": "book",
+              "payload": {
+                "url": "https://example.com/flights/traveler-quote"
+              }
+            },
+            "goals": [
+              {
+                "event": "booking",
+                "pricing": {
+                  "model": "cpa",
+                  "amount": "10",
+                  "currency": "USD"
+                }
+              }
+            ]
+          }
+        ],
+        "flight_search": {
+          "query_kind": "traveler_quote",
+          "status": "complete",
+          "fetched_at": "2026-10-01T09:00:00Z"
+        }
+      }
+    }
+  }
+}
