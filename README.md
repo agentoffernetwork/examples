@@ -82,7 +82,8 @@ pairs. Dates, identities, prices and example.com URLs are invented conformance
 illustrations, with no supplier credentials or claim of available inventory.
 
 - `http/offer-query-flight-reference-v1.0.json`: direct and connecting reference
-  candidates, a name-only stop, complete empty, partial empty/nonempty and errors.
+  candidates, a name-only stop, empty/nonempty results and errors. Internal
+  source outcomes do not add execution metadata to public responses.
 - `http/offer-query-flight-traveler-quote-v1.0.json`: complete adult/child/infant
   quote with ages and infant seat facts, round-trip and multi-city scenarios.
 - `http/offer-provider-flight-v1.0.json`: Partner identity and shared execution
