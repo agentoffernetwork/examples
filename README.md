@@ -73,3 +73,24 @@ They are not alternate current example paths.
 - Use decimal strings where the protocol schema requires decimal strings.
 
 Licensed under [Apache License 2.0](LICENSE).
+
+## Typed Flight Query examples
+
+The source files below contain synthetic requests and successful responses;
+`scenarios` holds additional named `{request, response}` or `{request, error}`
+pairs. Dates, identities, prices and example.com URLs are invented conformance
+illustrations, with no supplier credentials or claim of available inventory.
+
+- `http/offer-query-flight-reference-v1.0.json`: direct and connecting reference
+  candidates, a name-only stop, complete empty, partial empty/nonempty and errors.
+- `http/offer-query-flight-traveler-quote-v1.0.json`: complete adult/child/infant
+  quote with ages and infant seat facts, round-trip and multi-city scenarios.
+- `http/offer-provider-flight-v1.0.json`: Partner identity and shared execution
+  metadata, unsupported-capability and upstream-failure examples.
+
+Errors are existing uppercase code/message/data/extra envelopes; the invalid
+query scenario deliberately has an invalid date. Success payloads are the
+existing business payload, not a newly introduced transport wrapper. A host
+that uses a SUCCESS envelope wraps them under its existing transport contract.
+Actual test validation uses the real Schema and paired semantic entry points.
+These examples do not certify runtime deployment, live calls or public release.
