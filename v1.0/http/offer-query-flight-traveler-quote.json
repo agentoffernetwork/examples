@@ -164,12 +164,7 @@
           }
         ]
       }
-    ],
-    "flight_search": {
-      "query_kind": "traveler_quote",
-      "status": "complete",
-      "fetched_at": "2026-10-01T09:00:00Z"
-    }
+    ]
   },
   "scenarios": {
     "round_trip": {
@@ -371,12 +366,7 @@
               }
             ]
           }
-        ],
-        "flight_search": {
-          "query_kind": "traveler_quote",
-          "status": "complete",
-          "fetched_at": "2026-10-01T09:00:00Z"
-        }
+        ]
       }
     },
     "multi_city": {
@@ -578,12 +568,7 @@
               }
             ]
           }
-        ],
-        "flight_search": {
-          "query_kind": "traveler_quote",
-          "status": "complete",
-          "fetched_at": "2026-10-01T09:00:00Z"
-        }
+        ]
       }
     }
   }
