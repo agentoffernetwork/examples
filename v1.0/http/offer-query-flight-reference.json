@@ -69,15 +69,20 @@
                     {
                       "departure": {
                         "airport_code": "SFO",
-                        "local_at": "2026-11-12T12:30:00"
+                        "local_at": "2026-11-12T12:30:00",
+                        "city_code": "SFO",
+                        "city_name": "San Francisco"
                       },
                       "arrival": {
                         "airport_code": "NRT",
-                        "local_at": "2026-11-13T16:25:00"
+                        "local_at": "2026-11-13T16:25:00",
+                        "city_code": "TYO",
+                        "city_name": "Tokyo"
                       },
                       "duration_minutes": 715,
                       "marketing_carrier": {
-                        "code": "UA"
+                        "code": "UA",
+                        "name": "United Airlines"
                       },
                       "flight_number": "837",
                       "cabin_class": "economy",
@@ -142,7 +147,9 @@
                     {
                       "departure": {
                         "airport_code": "SFO",
-                        "local_at": "2026-11-12T12:30:00"
+                        "local_at": "2026-11-12T12:30:00",
+                        "city_code": "SFO",
+                        "city_name": "San Francisco"
                       },
                       "arrival": {
                         "airport_code": "LAX",
@@ -150,7 +157,8 @@
                       },
                       "duration_minutes": 90,
                       "marketing_carrier": {
-                        "code": "UA"
+                        "code": "UA",
+                        "name": "United Airlines"
                       },
                       "flight_number": "101",
                       "cabin_class": "economy",
@@ -163,11 +171,14 @@
                       },
                       "arrival": {
                         "airport_code": "NRT",
-                        "local_at": "2026-11-13T20:00:00"
+                        "local_at": "2026-11-13T20:00:00",
+                        "city_code": "TYO",
+                        "city_name": "Tokyo"
                       },
                       "duration_minutes": 660,
                       "marketing_carrier": {
-                        "code": "UA"
+                        "code": "UA",
+                        "name": "United Airlines"
                       },
                       "flight_number": "102",
                       "cabin_class": "economy",
@@ -371,15 +382,20 @@
                         {
                           "departure": {
                             "airport_code": "SFO",
-                            "local_at": "2026-11-12T12:30:00"
+                            "local_at": "2026-11-12T12:30:00",
+                            "city_code": "SFO",
+                            "city_name": "San Francisco"
                           },
                           "arrival": {
                             "airport_code": "NRT",
-                            "local_at": "2026-11-13T16:25:00"
+                            "local_at": "2026-11-13T16:25:00",
+                            "city_code": "TYO",
+                            "city_name": "Tokyo"
                           },
                           "duration_minutes": 715,
                           "marketing_carrier": {
-                            "code": "UA"
+                            "code": "UA",
+                            "name": "United Airlines"
                           },
                           "flight_number": "837",
                           "cabin_class": "economy",
@@ -624,15 +640,20 @@
                         {
                           "departure": {
                             "airport_code": "SFO",
-                            "local_at": "2026-11-12T12:30:00"
+                            "local_at": "2026-11-12T12:30:00",
+                            "city_code": "SFO",
+                            "city_name": "San Francisco"
                           },
                           "arrival": {
                             "airport_code": "NRT",
-                            "local_at": "2026-11-13T16:25:00"
+                            "local_at": "2026-11-13T16:25:00",
+                            "city_code": "TYO",
+                            "city_name": "Tokyo"
                           },
                           "duration_minutes": 715,
                           "marketing_carrier": {
-                            "code": "UA"
+                            "code": "UA",
+                            "name": "United Airlines"
                           },
                           "flight_number": "837",
                           "cabin_class": "economy",
@@ -697,7 +718,9 @@
                         {
                           "departure": {
                             "airport_code": "SFO",
-                            "local_at": "2026-11-12T12:30:00"
+                            "local_at": "2026-11-12T12:30:00",
+                            "city_code": "SFO",
+                            "city_name": "San Francisco"
                           },
                           "arrival": {
                             "airport_code": "LAX",
@@ -705,7 +728,8 @@
                           },
                           "duration_minutes": 90,
                           "marketing_carrier": {
-                            "code": "UA"
+                            "code": "UA",
+                            "name": "United Airlines"
                           },
                           "flight_number": "101",
                           "cabin_class": "economy",
@@ -718,11 +742,14 @@
                           },
                           "arrival": {
                             "airport_code": "NRT",
-                            "local_at": "2026-11-13T20:00:00"
+                            "local_at": "2026-11-13T20:00:00",
+                            "city_code": "TYO",
+                            "city_name": "Tokyo"
                           },
                           "duration_minutes": 660,
                           "marketing_carrier": {
-                            "code": "UA"
+                            "code": "UA",
+                            "name": "United Airlines"
                           },
                           "flight_number": "102",
                           "cabin_class": "economy",
