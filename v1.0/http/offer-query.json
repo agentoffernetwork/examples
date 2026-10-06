@@ -13,7 +13,7 @@
       "origin": [{"kind": "query_helper", "id": "budget"}],
       "signals": {"purchase_stage": "exploring", "timeframe": "this_month"}
     },
-    "constraints": {"category_ids": ["travel_tourism.accommodations.hotels_motels_resorts.hotels"]},
+    "constraints": {"category_ids": ["travel_tourism.accommodations.hotels_motels_resorts.hotels"], "offer_types": ["offline_service"], "listing_source_names": ["Example Travel"]},
     "force_offer": true,
     "response_options": {"thinking_mode": true}
   },
@@ -27,6 +27,7 @@
         "offer_instance_id": "019dd208-27d2-7673-b16f-6897fa120304",
         "version": "3.0",
         "offer_info": {
+          "offer_type": "offline_service",
           "title": "Hotel near Union Square",
           "short_description": "Quiet, walkable hotel near Union Square.",
           "category": {"id": "travel_tourism.accommodations.hotels_motels_resorts.hotels"},

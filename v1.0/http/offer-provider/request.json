@@ -30,7 +30,9 @@
   "constraints": {
     "category_ids": [
       "travel_tourism.accommodations.hotels_motels_resorts.hotels"
-    ]
+    ],
+    "offer_types": ["offline_service"],
+    "listing_source_names": ["Example Travel"]
   },
   "response_options": {
     "thinking_mode": true
