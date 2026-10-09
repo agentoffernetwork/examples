@@ -99,22 +99,42 @@
                         "airport_code": "SFO",
                         "local_at": "2026-11-12T12:30:00",
                         "city_code": "SFO",
-                        "city_name": "旧金山"
+                        "city_name": "旧金山",
+                        "timezone": "America/Los_Angeles"
                       },
                       "arrival": {
                         "airport_code": "NRT",
                         "local_at": "2026-11-13T16:25:00",
                         "city_code": "TYO",
-                        "city_name": "东京"
+                        "city_name": "东京",
+                        "timezone": "Asia/Tokyo"
                       },
                       "duration_minutes": 715,
                       "marketing_carrier": {
                         "code": "UA",
-                        "name": "美国联合航空"
+                        "name": "美国联合航空",
+                        "logo_url": "https://cdn.example.com/airlines/UA.svg"
                       },
                       "flight_number": "837",
                       "cabin_class": "economy",
-                      "stops": []
+                      "stops": [],
+                      "operating_carrier": {
+                        "code": "UA",
+                        "name": {
+                          "text": "United Airlines",
+                          "language": "en"
+                        },
+                        "logo_url": "https://cdn.example.com/airlines/UA.svg"
+                      },
+                      "operating_flight_number": "837",
+                      "standard_aircraft_type": {
+                        "iata_code": "789",
+                        "icao_code": "B789"
+                      },
+                      "cabin_amenities": {
+                        "wifi": true,
+                        "power_outlet": true
+                      }
                     }
                   ],
                   "duration_minutes": 715
@@ -143,7 +163,49 @@
                     false
                   ]
                 }
-              ]
+              ],
+              "fare_details": {
+                "components": [
+                  {
+                    "leg_index": 0,
+                    "segment_index": 0,
+                    "traveler_type": "adult",
+                    "brand_name": {
+                      "text": "Economy Standard",
+                      "language": "en"
+                    },
+                    "carry_on_baggage": {
+                      "pieces": 1
+                    },
+                    "checked_baggage": {
+                      "pieces": 1,
+                      "max_weight_kg_per_piece": 23
+                    },
+                    "change_policy": {
+                      "summary": {
+                        "text": "Changes permitted before departure; fare difference may apply.",
+                        "language": "en"
+                      },
+                      "permitted": true
+                    },
+                    "seat_selection": {
+                      "included": false,
+                      "starting_fee": {
+                        "amount": "18.00",
+                        "currency": "USD"
+                      }
+                    }
+                  }
+                ],
+                "self_transfer": false,
+                "separate_tickets": false
+              },
+              "emissions": {
+                "estimated_kg_co2e": 650,
+                "relative_to_typical_percent": -12,
+                "methodology": "Example flight emissions model v1",
+                "calculated_at": "2026-10-01T08:59:00Z"
+              }
             }
           }
         },

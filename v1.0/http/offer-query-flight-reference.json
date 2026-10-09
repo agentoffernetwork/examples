@@ -71,13 +71,23 @@
                         "airport_code": "SFO",
                         "local_at": "2026-11-12T12:30:00",
                         "city_code": "SFO",
-                        "city_name": "San Francisco"
+                        "city_name": "San Francisco",
+                        "airport_full_name": {
+                          "text": "San Francisco International Airport",
+                          "language": "und"
+                        },
+                        "terminal": "3"
                       },
                       "arrival": {
                         "airport_code": "NRT",
                         "local_at": "2026-11-13T16:25:00",
                         "city_code": "TYO",
-                        "city_name": "Tokyo"
+                        "city_name": "Tokyo",
+                        "airport_full_name": {
+                          "text": "成田国際空港",
+                          "language": "und"
+                        },
+                        "terminal": "1"
                       },
                       "duration_minutes": 715,
                       "marketing_carrier": {
@@ -86,7 +96,14 @@
                       },
                       "flight_number": "837",
                       "cabin_class": "economy",
-                      "stops": []
+                      "stops": [],
+                      "planned_aircraft": {
+                        "name": {
+                          "text": "Boeing 787-9",
+                          "language": "und"
+                        },
+                        "source": "supplier_reported"
+                      }
                     }
                   ],
                   "duration_minutes": 715
